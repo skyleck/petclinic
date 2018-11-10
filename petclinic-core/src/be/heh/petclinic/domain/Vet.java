@@ -6,6 +6,12 @@ public class Vet {
     private String firstname;
     private String speciality;
 
+    public Vet(String lastname, String firstname, String speciality){
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.speciality = speciality;
+    }
+
     public void setLastname(String lastname){
         this.lastname = lastname;
     }
