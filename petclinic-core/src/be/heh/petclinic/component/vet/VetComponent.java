@@ -1,4 +1,4 @@
-package be.heh.petclinic.component;
+package be.heh.petclinic.component.vet;
 
 import be.heh.petclinic.domain.Vet;
 
