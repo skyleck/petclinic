@@ -1,3 +1,4 @@
+
 buildscript {
     ext {
         springBootVersion = '2.1.0.RELEASE'
@@ -23,13 +24,25 @@ repositories {
 }
 
 
+ext {
+    springCloudVersion = 'Finchley.SR1'
+}
+
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile project(':petclinic-core')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 sourceSets {
-    main {
+    main{
         java {
             srcDirs = ['src']
         }
