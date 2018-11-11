@@ -5,7 +5,7 @@ import be.heh.petclinic.domain.Vet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VetComponentImpl implements VetComponent {
+class VetComponentImpl implements VetComponent {
 
     private List<Vet> vets = new ArrayList<>();
 
