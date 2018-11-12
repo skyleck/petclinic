@@ -6,6 +6,7 @@ public class Vet {
     private String firstname;
     private String speciality;
 
+    public Vet(){}
     public Vet(String lastname, String firstname, String speciality){
         this.lastname = lastname;
         this.firstname = firstname;
@@ -36,4 +37,10 @@ public class Vet {
         return this.speciality;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return ((Vet) obj).getFirstname().equals(this.getFirstname())
+                && ((Vet) obj).getLastname().equals(this.getLastname())
+                && ((Vet) obj).getSpeciality().equals(this.getSpeciality());
+    }
 }

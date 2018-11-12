@@ -41,6 +41,12 @@ dependencyManagement {
     }
 }
 
+jar {
+    manifest {
+        attributes("Main-Class":"be.heh.petclinic.PetClinicApplication")
+    }
+}
+
 sourceSets {
     main{
         java {
