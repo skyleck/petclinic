@@ -1,7 +1,11 @@
-FROM mysql:8.0
+FROM mysql:5.7
 
 MAINTAINER HEMPTE Maxime maximehempte@gmail.com
 
 ENV MYSQL_DATABASE petclinic
 
-COPY ./sql-scripts/ /docker-entrypoint-initdb.d/
+ADD ./sql-scripts/ /docker-entrypoint-initdb.d/
+
+EXPOSE 3306
+
+CMD ["mysqld"]
