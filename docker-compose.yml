@@ -15,3 +15,14 @@ services:
     ports:
       - 8080:8080
 
+  react:
+    depends_on:
+      - db
+      - app
+    build:
+      context: ./petclinic-web
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+
