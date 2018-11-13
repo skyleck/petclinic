@@ -6,5 +6,6 @@ public enum TypePet {
     dog,
     hamster,
     lizard,
+    rabbit,
     snake
 }

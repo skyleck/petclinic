@@ -1,8 +1,22 @@
-apply plugin: 'java'
 
-plugins {
-  id 'org.liquibase.gradle' version '2.0.1'
+buildscript {
+
+   repositories {
+
+       mavenCentral()
+
+   }
+
+   dependencies {
+
+       classpath "org.liquibase:liquibase-gradle-plugin:2.0.1"
+
+   }
+
 }
+
+apply plugin: 'java'
+apply plugin: 'org.liquibase.gradle'
 
 repositories {
     mavenCentral()
@@ -41,6 +55,10 @@ liquibase {
         }
     }
 }    
+}
+
+test{
+    useJUnitPlatform()
 }
 
 sourceSets {

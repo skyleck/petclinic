@@ -11,5 +11,5 @@
     
     <include file="changelogs/sprint-1/1-create_database_petclinic.sql" relativeToChangelogFile="true"/>
     <include file="changelogs/sprint-1/2-create_table_vets.sql" relativeToChangelogFile="true"/>
-    <include file="changelogs/sprint-1/3-populate_table_vets.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/sprint-1/3-populate_table_vets.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
