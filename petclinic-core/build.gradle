@@ -1,10 +1,15 @@
 apply plugin: 'java'
+apply plugin: 'liquibase'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    classpath 'org.liquibase:liquibase-core:3.4.1'
+    classpath "org.liquibase:liquibase-gradle-plugin:1.1.1"
+    classpath 'mysql:mysql-connector-java:5.1.13'
+    
     compile("org.springframework.boot:spring-boot-starter:2.1.0.RELEASE")
 
     runtime 'mysql:mysql-connector-java:8.0.12'
@@ -19,6 +24,21 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '3.2.4.RELEASE'
 }
 
+def changeLog = "$projectDir/src/be/heh/petclinic/sql/changelog.xml"
+
+task('liquibase') << {
+println "executing liquibase"
+liquibase {
+    activities {
+        main {
+            changeLogFile changeLog
+            url 'jdbc:mysql://192.168.99.100:3306/petclinic'
+            username 'root'
+            password 'test'
+        }
+    }
+}    
+}
 
 sourceSets {
     main {
