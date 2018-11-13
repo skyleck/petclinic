@@ -1,36 +1,40 @@
 import React from "react"
-
+/*
 interface Vet {
     lastname: string;
     firstname: string;
     speciality:string;
 }
-
+*/
+/*
 interface VetListProps{
 
-}
+}*/
 
+/*
 interface VetListState{
     vets: Array<Vet>;
     isLoading: boolean;
 }
+*/
 
-const Vetviw = ({vet}) => (
-    <p>
-    {vet.lastname}
-</p>
-)
+export class Vets extends React.Component{
 
-export class Vets extends React.Component<VetListProps, VetListState>{
-
-    constructor(props: VetListProps){
+    /*constructor(props: VetListProps){
         super(props);
 
         this.state = {
             vets: [],
             isLoading: false
         };
+    }*/
+
+    //test
+    state = {
+        vets: [],
+        isLoading: false
     }
+    //fin du test
 
     componentDidMount(){
         this.setState({isLoading: true})
@@ -48,23 +52,23 @@ export class Vets extends React.Component<VetListProps, VetListState>{
 
         return(
             <div>
-            <h2>Veterinarians</h2>
-            <table id="vets">
-            <thead>
-            <tr>
-            <th>Name</th>
-            <th>Specialities</th>
-            </tr>
-            </thead>
-        {vets.map((vet: Vet) =>
-        <tr>
-        <td>{vet.firstname} {vet.lastname}</td>
-        <td>{vet.speciality}</td>
-        </tr>
-        )}
-    </table>
-        </div>
-    );
+                <h2>Veterinarians</h2>
+                <table id="vets">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Specialities</th>
+                        </tr>
+                    </thead>
+                    {vets.map((vet) =>
+                        <tr>
+                            <td>{vet.firstname} {vet.lastname}</td>
+                            <td>{vet.speciality}</td>
+                        </tr>
+                    )}
+                </table>
+            </div>
+        );
     }
 }
 
