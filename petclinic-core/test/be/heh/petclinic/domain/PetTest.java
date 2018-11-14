@@ -13,7 +13,12 @@ class PetTest {
 
     @BeforeEach
     void setUp() {
-        pet = new Pet("Buzz",new GregorianCalendar(2018,10,25),TypePet.rabbit);
+        pet = new Pet(0,"Buzz",2018,10,25,TypePet.rabbit);
+    }
+
+    @Test
+    void getId() {
+        assertEquals(0,pet.getId());
     }
 
     @Test
@@ -39,7 +44,7 @@ class PetTest {
 
     @Test
     void setBirthdate() {
-        pet.setBirthdate(new GregorianCalendar(2016,03,13));
+        pet.setBirthdate(2016,03,13);
         assertEquals(new GregorianCalendar(2016,03,13),pet.getBirthdate());
     }
 

@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 
-@RestController
-
 public class VetRestController {
 
     @Autowired

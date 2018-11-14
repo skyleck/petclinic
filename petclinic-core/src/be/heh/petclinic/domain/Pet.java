@@ -2,18 +2,23 @@ package be.heh.petclinic.domain;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Pet {
+    private int id;
     private String name;
     private Calendar birthdate;
     private TypePet type;
     //private ArrayList<Visit> visits;
 
-    public Pet(String name, Calendar birthdate, TypePet type) {
+    public Pet(int id,String name, int year, int month, int day, TypePet type) {
+        this.id=id;
         this.name = name;
-        this.birthdate = birthdate;
+        this.birthdate = new GregorianCalendar(year,month,day);
         this.type = type;
     }
+
+    public int getId() { return this.id; }
 
     public String getName(){
         return this.name;
@@ -31,8 +36,8 @@ public class Pet {
         this.name = name;
     }
 
-    public void setBirthdate(Calendar birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthdate(int year, int month, int day) {
+        this.birthdate = new GregorianCalendar(year,month,day);
     }
 
     public void setType(TypePet type) {

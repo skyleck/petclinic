@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
-  <component name="NewModuleRootManager">
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="org.junit.jupiter:junit-jupiter-engine:5.3.1" level="project" />
-  </component>
-</module>
