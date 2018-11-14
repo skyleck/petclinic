@@ -34,7 +34,7 @@ export class Vets extends React.Component<VetListProps, VetListState>{
 
     componentDidMount(){
         this.setState({isLoading: true})
-        fetch('http://192.198.99.100:8080/api/v1/vets')
+        fetch('http://localhost:8080/api/v1/vets')
             .then(response => response.json())
             .then(data => this.setState({vets: data, isLoading: false}));
     }

@@ -26,15 +26,18 @@ public class PetRestController {
     }
 
     @RequestMapping(value = "api/v1/addPet", method = RequestMethod.POST)
-    public void addPet(Pet pet) {
+    public ResponseEntity<String> addPet(Pet pet) {
         petComponentImpl.addPet(pet);
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "api/v1/updatePet", method = RequestMethod.PUT)
-    public void updatePet(int id, Pet updatePet) {
+    public ResponseEntity<String> updatePet(int id, Pet updatePet) {
         int pos = petComponentImpl.searchById(id);
         if(pos != -1) {
             petComponentImpl.updatePet(pos, updatePet);
+            return new ResponseEntity<String>(HttpStatus.OK);
         }
+        return new ResponseEntity<String>("Pet not found",HttpStatus.NOT_FOUND);
     }
 }
