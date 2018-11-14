@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.heh.petclinic.domain.PetTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-11-14T10:12:19" hostname="DESKTOP-129DBPL" time="0.045">
+<testsuite name="be.heh.petclinic.domain.PetTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-11-14T14:02:34" hostname="DESKTOP-129DBPL" time="0.045">
   <properties/>
-  <testcase name="getBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.038"/>
+  <testcase name="getBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.039"/>
   <testcase name="getName()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
-  <testcase name="getType()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
-  <testcase name="getId()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
-  <testcase name="setBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
+  <testcase name="getType()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <testcase name="getId()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <testcase name="setBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
   <testcase name="setName()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
   <testcase name="setType()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

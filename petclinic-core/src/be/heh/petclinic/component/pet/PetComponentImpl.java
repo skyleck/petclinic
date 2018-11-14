@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.GregorianCalendar;
 
-public class PetComponentImpl implements PetComponent{
+class PetComponentImpl implements PetComponent{
     ArrayList<Pet> pets = new ArrayList<Pet>();
 
     public PetComponentImpl () {
@@ -25,6 +25,7 @@ public class PetComponentImpl implements PetComponent{
         pets.add(pet);
     }
 
+    @Override
     public int searchById(int id){
         if(id < pets.size() && pets.get(id).getId() == id){
             return id;
