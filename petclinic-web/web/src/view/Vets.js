@@ -1,40 +1,15 @@
 import React from "react"
 
-interface Vet {
-    lastname: string;
-    firstname: string;
-    speciality:string;
-}
+export class Vets extends React.Component{
 
-interface VetListProps{
-
-}
-
-interface VetListState{
-    vets: Array<Vet>;
-    isLoading: boolean;
-}
-
-const Vetviw = ({vet}) => (
-    <p>
-    {vet.lastname}
-</p>
-)
-
-export class Vets extends React.Component<VetListProps, VetListState>{
-
-    constructor(props: VetListProps){
-        super(props);
-
-        this.state = {
-            vets: [],
-            isLoading: false
-        };
+    state = {
+        vets: [],
+        isLoading: false
     }
 
     componentDidMount(){
         this.setState({isLoading: true})
-        fetch('http://192.198.99.100:8080/api/v1/vets')
+        fetch('http://localhost:8080/api/v1/vets')
             .then(response => response.json())
             .then(data => this.setState({vets: data, isLoading: false}));
     }

@@ -1,38 +1,49 @@
 package be.heh.petclinic.web;
 
 import be.heh.petclinic.component.owner.OwnerComponent;
-import be.heh.petclinic.component.owner.OwnerComponentImpl;
 import be.heh.petclinic.domain.Owner;
+import be.heh.petclinic.domain.TelephoneNumbeNotValid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.Collection;
+
+import static javafx.scene.input.KeyCode.T;
 
 @RestController
 public class OwnerRestController {
 
-    OwnerComponentImpl ownerComponent = new OwnerComponentImpl();
-
-    public OwnerRestController() throws Exception {
-    }
+    @Autowired
+    OwnerComponent ownerComponentImpl;
 
     @RequestMapping(value = "api/v1/owners", method = RequestMethod.GET)
-    public Collection<Owner> getOwners() throws Exception {
-        Collection<Owner> owners = ownerComponent.getOwner();
-        return owners;
+    public ResponseEntity<Collection<Owner>> getOwners() throws Exception {
+        Collection<Owner> owners = ownerComponentImpl.getOwner();
+        if(owners.isEmpty()){
+            return new ResponseEntity<Collection<Owner>>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<Collection<Owner>>(owners,HttpStatus.OK);
     }
 
     @RequestMapping(value = "api/v1/addOwner", method = RequestMethod.POST)
-    public void addOwner(Owner owner) throws Exception {
-        ownerComponent.addOwner(owner);
+    public ResponseEntity<?> addOwner(Owner owner) throws TelephoneNumbeNotValid {
+        ownerComponentImpl.addOwner(owner);
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "api/v1/updateOwner", method = RequestMethod.PUT)
-    public void updateOwner(int id, Owner updateOwner) {
-        int pos = ownerComponent.searchById(id);
+    public ResponseEntity<?>  updateOwner(int id, Owner updateOwner) {
+        int pos = ownerComponentImpl.searchById(id);
         if (pos != -1) {
-            ownerComponent.updateOwner(pos, updateOwner);
+            ownerComponentImpl.updateOwner(pos, updateOwner);
+            return  new ResponseEntity<String>(HttpStatus.OK);
         }
+        return  new ResponseEntity<String>("Owner not found",HttpStatus.NOT_FOUND);
     }
 }

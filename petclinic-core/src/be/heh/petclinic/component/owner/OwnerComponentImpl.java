@@ -6,7 +6,7 @@ import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class OwnerComponentImpl implements OwnerComponent {
+class OwnerComponentImpl implements OwnerComponent {
 
     ArrayList<Owner> owners = new ArrayList<Owner>();
 
@@ -27,6 +27,7 @@ public class OwnerComponentImpl implements OwnerComponent {
         owners.add(owner);
     }
 
+    @Override
     public int searchById(int id){
         if(id < owners.size() && owners.get(id).getId() == id){
             return id;

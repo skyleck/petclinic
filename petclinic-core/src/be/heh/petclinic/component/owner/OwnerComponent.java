@@ -11,4 +11,6 @@ public interface OwnerComponent {
     void addOwner(Owner owner);
 
     void updateOwner(int id, Owner updateOwner);
+
+    int searchById(int id);
 }

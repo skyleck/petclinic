@@ -62,7 +62,7 @@ public class Owner {
             this.telephone = telephone;
         }
         else {
-            throw new Exception("telephone number is not valid");
+            throw new TelephoneNumbeNotValid("Telephone number is not valid");
         }
     }
 }
