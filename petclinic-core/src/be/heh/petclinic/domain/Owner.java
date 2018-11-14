@@ -1,18 +1,24 @@
 package be.heh.petclinic.domain;
 
 public class Owner {
+    int id;
     private String lastname;
     private String firstname;
     private String address;
     private String city;
     private String telephone;
 
-    public Owner(String lastname, String firstname, String address, String city, String telephone) throws Exception {
+    public Owner(int id, String lastname, String firstname, String address, String city, String telephone) throws Exception {
+        this.id = id;
         this.lastname = lastname;
         this.firstname = firstname;
         this.address = address;
         this.city = city;
         this.setTelephone(telephone);
+    }
+
+    public int  getId(){
+        return id;
     }
 
     public String getLastname() {

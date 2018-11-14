@@ -12,7 +12,12 @@ class OwnerTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        this.owner = new Owner("Hempte","Maxime","18 Rue Du Cirque","Circus","0472854896");
+        this.owner = new Owner(0,"Hempte","Maxime","18 Rue Du Cirque","Circus","0472854896");
+    }
+
+    @Test
+    void getId(){
+        assertEquals(0,owner.getId());
     }
 
     @Test
