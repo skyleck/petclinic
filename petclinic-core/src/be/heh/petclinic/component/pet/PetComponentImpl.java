@@ -3,12 +3,17 @@ package be.heh.petclinic.component.pet;
 import be.heh.petclinic.domain.Pet;
 import be.heh.petclinic.domain.TypePet;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.GregorianCalendar;
 
 class PetComponentImpl implements PetComponent{
     private JdbcPetDao petDao;
+
+    public PetComponentImpl(DataSource dataSource) {
+        petDao = new JdbcPetDao(dataSource);
+    }
 
     @Override
     public Collection<Pet> getPets() {
@@ -21,12 +26,7 @@ class PetComponentImpl implements PetComponent{
     }
 
     @Override
-    public int searchById(int id){
-        //
-    }
-
-    @Override
     public void updatePet(int id, Pet updatePet) {
-        pets.set(id, updatePet);
+        petDao.updatePet(id, updatePet);
     }
 }

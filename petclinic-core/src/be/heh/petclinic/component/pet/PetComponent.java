@@ -10,6 +10,4 @@ public interface PetComponent {
     void addPet(Pet pet);
 
     void updatePet(int id, Pet updatePet);
-
-    int searchById(int id);
 }

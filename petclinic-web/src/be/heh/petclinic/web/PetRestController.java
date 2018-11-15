@@ -33,11 +33,7 @@ public class PetRestController {
 
     @RequestMapping(value = "api/v1/updatePet", method = RequestMethod.PUT)
     public ResponseEntity<String> updatePet(int id, Pet updatePet) {
-        int pos = petComponentImpl.searchById(id);
-        if(pos != -1) {
-            petComponentImpl.updatePet(pos, updatePet);
-            return new ResponseEntity<String>(HttpStatus.OK);
-        }
-        return new ResponseEntity<String>("Pet not found",HttpStatus.NOT_FOUND);
+        petComponentImpl.updatePet(id, updatePet);
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 }

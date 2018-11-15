@@ -11,6 +11,6 @@
 
 
     <bean id="petComponent" class="be.heh.petclinic.component.pet.PetComponentImpl">
-        <!-- <constructor-arg name="dataSource" ref="dataSource" /> -->
+        <constructor-arg name="dataSource" ref="dataSource" />
     </bean>
 </beans>
