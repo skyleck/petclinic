@@ -1,0 +1,5 @@
+id,pet_id,vet_id,visitdate,description
+1,7,2,2010-03-04,rabies shot
+2,8,4,2011-03-04,rabies shot
+3,8,5,2009-06-04,neutered
+4,7,3,2008-09-04,spayed
