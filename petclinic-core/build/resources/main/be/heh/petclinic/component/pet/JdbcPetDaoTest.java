@@ -27,9 +27,9 @@ class JdbcPetDaoTest extends AbstractComponentTestBase {
         template = getJdbcTemplate();
         jdbcPetDao = new JdbcPetDao(dataSource);
         list = new ArrayList<Pet>();
-        list.add(new Pet(1,"Titi",2015,01,01,TypePet.bird));
-        list.add(new Pet(2,"Tardos",2013,12,31,TypePet.dog));
-        list.add(new Pet(3,"Buzz",2011,07,15,TypePet.rabbit));
+        list.add(new Pet(1,"Titi",2015,0,01,TypePet.bird));
+        list.add(new Pet(2,"Tardos",2013,11,31,TypePet.dog));
+        list.add(new Pet(3,"Buzz",2011,6,15,TypePet.rabbit));
     }
 
     @Test
@@ -43,6 +43,8 @@ class JdbcPetDaoTest extends AbstractComponentTestBase {
         ArrayList<Pet> loadPet = (ArrayList<Pet>)jdbcPetDao.getPets();
         assertEquals(list.size(),loadPet.size());
         System.out.println("ABC : " + list.get(0).getBirthdate().get(Calendar.YEAR) + " : " + loadPet.get(0).getBirthdate().get(Calendar.YEAR));
+        System.out.println("MLK : " + list.get(1).getBirthdate().get(Calendar.YEAR) + " : " + loadPet.get(1).getBirthdate().get(Calendar.YEAR));
+        System.out.println("MLK : " + list.get(2).getBirthdate().get(Calendar.YEAR) + " : " + loadPet.get(2).getBirthdate().get(Calendar.YEAR));
         assertIterableEquals(list, loadPet);
     }
 

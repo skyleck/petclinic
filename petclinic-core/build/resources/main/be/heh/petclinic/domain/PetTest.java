@@ -28,7 +28,7 @@ class PetTest {
 
     @Test
     void getBirthdate() {
-        assertEquals(new GregorianCalendar(2018,9,25),pet.getBirthdate());
+        assertEquals(new GregorianCalendar(2018,10,25),pet.getBirthdate());
     }
 
     @Test

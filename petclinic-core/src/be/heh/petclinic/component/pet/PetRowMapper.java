@@ -15,14 +15,16 @@ public class PetRowMapper implements RowMapper<Pet> {
 
     @Override
     public Pet mapRow(ResultSet rs, int i) throws SQLException {
+
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(rs.getDate("birthdate"));
+        System.out.println("TETSTA : " + calendar.get(Calendar.MONTH));
         Pet pet = new Pet(
                 rs.getInt("id"),
                 rs.getString("name"),
                 calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH) +1,//!!!
-                calendar.get(Calendar.DATE) +1,//!!! Dont know why
+                calendar.get(Calendar.MONTH),//!!!
+                calendar.get(Calendar.DATE),//!!! Dont know why
                 Enum.valueOf(TypePet.class,rs.getString("typepet"))
         );
         return pet;
