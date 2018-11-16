@@ -8,39 +8,20 @@ import java.util.Collection;
 
 class OwnerComponentImpl implements OwnerComponent {
 
-    ArrayList<Owner> owners = new ArrayList<Owner>();
-
-    public OwnerComponentImpl() throws Exception {
-        owners.add(new Owner(0,"Hempte","Maxime","18 Rue Du Cirque",
-                "Circus","0472854896"));
-        owners.add(new Owner(1,"Adrien","Harpignies","7 Rue De La Rue",
-                "the city","0478963214"));
-    }
+    private JdbcOwnerDao ownerDao;
 
     @Override
     public Collection<Owner> getOwner(){
-        return owners;
+        return ownerDao.getOwners();
     }
 
     @Override
     public void addOwner(Owner owner) {
-        owners.add(owner);
+        ownerDao.addOwner(owner);
     }
 
     @Override
-    public int searchById(int id){
-        if(id < owners.size() && owners.get(id).getId() == id){
-            return id;
-        }
-        for(int i = 0; i < owners.size(); i++){
-            if(owners.get(i).getId() == id)
-                return  i;
-        }
-        return -1;
-    }
-
-    @Override
-    public void updateOwner(int id, Owner updateOwner) {
-        owners.set(id, updateOwner);
+    public void updateOwner(int id, Owner owner) {
+        ownerDao.updateOwner(id,owner);
     }
 }

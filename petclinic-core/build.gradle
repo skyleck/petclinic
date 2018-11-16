@@ -19,6 +19,10 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '3.2.4.RELEASE'
 }
 
+test{
+    useJUnitPlatform()
+}
+
 sourceSets {
     main {
         java {

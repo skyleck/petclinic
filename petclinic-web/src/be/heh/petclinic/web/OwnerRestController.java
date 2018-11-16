@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.net.URI;
 import java.util.Collection;
 
 import static javafx.scene.input.KeyCode.T;
@@ -38,12 +36,8 @@ public class OwnerRestController {
     }
 
     @RequestMapping(value = "api/v1/updateOwner", method = RequestMethod.PUT)
-    public ResponseEntity<?>  updateOwner(int id, Owner updateOwner) {
-        int pos = ownerComponentImpl.searchById(id);
-        if (pos != -1) {
-            ownerComponentImpl.updateOwner(pos, updateOwner);
-            return  new ResponseEntity<String>(HttpStatus.OK);
-        }
-        return  new ResponseEntity<String>("Owner not found",HttpStatus.NOT_FOUND);
+    public ResponseEntity<?>  updateOwner(int id, Owner owner) {
+        ownerComponentImpl.updateOwner(id,owner);
+        return  new ResponseEntity<String>(HttpStatus.OK);
     }
 }

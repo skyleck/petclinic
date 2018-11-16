@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="be.heh.petclinic.domain.OwnerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-11-16T11:52:50" hostname="DESKTOP-IISQM2V" time="0.017">
+  <properties/>
+  <testcase name="setTelephone()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="getAddress()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="getCity()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="getId()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="getFirstname()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="setLastname()" classname="be.heh.petclinic.domain.OwnerTest" time="0.002"/>
+  <testcase name="getLastname()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="getTelephone()" classname="be.heh.petclinic.domain.OwnerTest" time="0.002"/>
+  <testcase name="setFirstname()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <testcase name="setAddress()" classname="be.heh.petclinic.domain.OwnerTest" time="0.0"/>
+  <testcase name="setCity()" classname="be.heh.petclinic.domain.OwnerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
