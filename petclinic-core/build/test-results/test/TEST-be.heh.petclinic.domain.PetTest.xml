@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="be.heh.petclinic.domain.PetTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-11-16T10:58:14" hostname="DESKTOP-129DBPL" time="0.008">
+  <properties/>
+  <testcase name="getBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.002"/>
+  <testcase name="getName()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
+  <testcase name="getType()" classname="be.heh.petclinic.domain.PetTest" time="0.001"/>
+  <testcase name="getId()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <testcase name="setBirthdate()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <testcase name="setName()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <testcase name="setType()" classname="be.heh.petclinic.domain.PetTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

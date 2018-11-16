@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="be.heh.petclinic.component.vet.JdbcVetDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-16T10:58:14" hostname="DESKTOP-129DBPL" time="0.08">
+  <properties/>
+  <testcase name="test_getVets()" classname="be.heh.petclinic.component.vet.JdbcVetDaoTest" time="0.08"/>
+  <system-out><![CDATA[11:58:13.726 [Test worker] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3fbb708c
+11:58:13.904 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Alias definition 'dataSource' ignored since it points to same name
+11:58:13.910 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 2 bean definitions from class path resource [be/heh/petclinic/component/applicationContext.xml]
+11:58:13.937 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dataSource'
+11:58:14.011 [Test worker] INFO org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
+11:58:14.013 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'vetComponent'
+ici
+src\be\heh\petclinic\sql\schemaVet.sql
+11:58:14.047 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+11:58:14.047 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+11:58:14.418 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Executing SQL script from file [D:\Ecole\3_Fin_de_cycle\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql]
+11:58:14.450 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: DROP TABLE IF EXISTS vet
+11:58:14.491 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: CREATE TABLE vet ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, speciality char(45) not null, primary key (id))
+11:58:14.496 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Carter", "James", "none")
+11:58:14.503 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Helen", "Leary", "radiology")
+11:58:14.509 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Douglas", "Linda", "dentistry surgery")
+11:58:14.513 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Ortega", "Rafael", "surgery")
+11:58:14.521 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Stevens", "Henry","radiology")
+11:58:14.526 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Jenkins", "Sharon","none")
+11:58:14.526 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Done executing SQL script from file [D:\Ecole\3_Fin_de_cycle\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql] in 107 ms.
+11:58:14.531 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+11:58:14.543 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT lastname, firstname, speciality FROM vet]
+11:58:14.544 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+11:58:14.544 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+11:58:14.610 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+]]></system-out>
+  <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+Fri Nov 16 11:58:14 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 11:58:14 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+]]></system-err>
+</testsuite>

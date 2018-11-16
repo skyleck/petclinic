@@ -14,6 +14,7 @@ public class Pet {
     public Pet(int id,String name, int year, int month, int day, TypePet type) {
         this.id=id;
         this.name = name;
+        month = month-1; // Car janvier = l'index 0 de la liste !!!
         this.birthdate = new GregorianCalendar(year,month,day);
         this.type = type;
     }
