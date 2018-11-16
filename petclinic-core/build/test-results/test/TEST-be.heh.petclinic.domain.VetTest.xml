@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.heh.petclinic.domain.VetTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-11-16T10:58:14" hostname="DESKTOP-129DBPL" time="0.005">
+<testsuite name="be.heh.petclinic.domain.VetTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-11-16T15:51:14" hostname="DESKTOP-129DBPL" time="0.006">
   <properties/>
   <testcase name="getSpeciality()" classname="be.heh.petclinic.domain.VetTest" time="0.001"/>
-  <testcase name="setSpeciality()" classname="be.heh.petclinic.domain.VetTest" time="0.0"/>
-  <testcase name="getFirstname()" classname="be.heh.petclinic.domain.VetTest" time="0.0"/>
+  <testcase name="setSpeciality()" classname="be.heh.petclinic.domain.VetTest" time="0.001"/>
+  <testcase name="getFirstname()" classname="be.heh.petclinic.domain.VetTest" time="0.001"/>
   <testcase name="setLastname()" classname="be.heh.petclinic.domain.VetTest" time="0.0"/>
-  <testcase name="getLastname()" classname="be.heh.petclinic.domain.VetTest" time="0.001"/>
-  <testcase name="setFirstname()" classname="be.heh.petclinic.domain.VetTest" time="0.001"/>
+  <testcase name="getLastname()" classname="be.heh.petclinic.domain.VetTest" time="0.0"/>
+  <testcase name="setFirstname()" classname="be.heh.petclinic.domain.VetTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

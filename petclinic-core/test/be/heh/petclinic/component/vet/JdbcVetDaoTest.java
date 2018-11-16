@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import java.util.Calendar;
+
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 class JdbcVetDaoTest extends AbstractComponentTestBase {

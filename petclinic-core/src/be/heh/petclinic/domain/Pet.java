@@ -38,7 +38,7 @@ public class Pet {
     }
 
     public void setBirthdate(int year, int month, int day) {
-        this.birthdate = new GregorianCalendar(year,month,day);
+        this.birthdate = new GregorianCalendar(year,(month-1),day);// !!!
     }
 
     public void setType(TypePet type) {
@@ -52,4 +52,15 @@ public class Pet {
     /*public void addVisit(Visit visit) {
         this.visits.add(visit);
     }*/
+
+    @Override
+    public boolean equals(Object obj) {
+        Calendar calendar = ((Pet)obj).getBirthdate();
+
+        return (((Pet) obj).getId()==this.getId()
+                &&((Pet) obj).getName().equals(this.getName())
+                //&& ((Pet) obj).getBirthdate().equals(this.getBirthdate())
+                &&(int)calendar.get(Calendar.YEAR) == (int)this.getBirthdate().get(Calendar.YEAR)
+                && ((Pet) obj).getType().equals(this.getType()));
+    }
 }
