@@ -2,13 +2,17 @@ package be.heh.petclinic.component.owner;
 
 import be.heh.petclinic.domain.Owner;
 
-import java.net.CookieHandler;
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Collection;
 
 class OwnerComponentImpl implements OwnerComponent {
 
     private JdbcOwnerDao ownerDao;
+
+    public OwnerComponentImpl(DataSource dataSource){
+        ownerDao = new JdbcOwnerDao(dataSource);
+    }
 
     @Override
     public Collection<Owner> getOwner(){

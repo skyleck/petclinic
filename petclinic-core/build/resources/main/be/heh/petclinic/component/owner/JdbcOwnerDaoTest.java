@@ -31,7 +31,7 @@ public class JdbcOwnerDaoTest extends AbstractComponentTestBase {
 
         list = new ArrayList<Owner>();
 
-        list.add(new Owner(1,"Frankli","George","10 W.Liberty St.","Madison",
+        list.add(new Owner(1,"Franklin","George","10 W.Liberty St.","Madison",
                             "6085551023"));
         list.add(new Owner(2,"Davis","Betty","638 Cardinal Ave.","Sun Prairie",
                             "6085551749"));
@@ -40,12 +40,16 @@ public class JdbcOwnerDaoTest extends AbstractComponentTestBase {
     }
 
     @Test
-    void getOwners() throws TelephoneNumbeNotValid {
-        ArrayList<Owner> loadOwner1 = (ArrayList<Owner>)jdbcOwnerDao.getOwners();
-        assertEquals(list.size(),loadOwner1.size());
-        assertIterableEquals(list, loadOwner1);
+    void test() throws TelephoneNumbeNotValid{
+        getOwners();
         addOwner();
         updateOwner();
+    }
+
+    void getOwners() throws TelephoneNumbeNotValid {
+        ArrayList<Owner> loadOwner = (ArrayList<Owner>)jdbcOwnerDao.getOwners();
+        assertEquals(list.size(),loadOwner.size());
+        assertIterableEquals(list, loadOwner);
     }
 
     void addOwner() throws TelephoneNumbeNotValid {

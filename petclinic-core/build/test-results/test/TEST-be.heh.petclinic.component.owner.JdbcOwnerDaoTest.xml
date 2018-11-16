@@ -1,127 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.heh.petclinic.component.owner.JdbcOwnerDaoTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-11-16T11:52:45" hostname="DESKTOP-IISQM2V" time="0.127">
+<testsuite name="be.heh.petclinic.component.owner.JdbcOwnerDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-16T14:35:19" hostname="DESKTOP-IISQM2V" time="0.444">
   <properties/>
-  <testcase name="getOwners()" classname="be.heh.petclinic.component.owner.JdbcOwnerDaoTest" time="0.127">
-    <failure message="org.opentest4j.AssertionFailedError: iterable contents differ at index [0], expected: &lt;be.heh.petclinic.domain.Owner@1c270264&gt; but was: &lt;be.heh.petclinic.domain.Owner@1d0bc7b0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: iterable contents differ at index [0], expected: &lt;be.heh.petclinic.domain.Owner@1c270264&gt; but was: &lt;be.heh.petclinic.domain.Owner@1d0bc7b0&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertIterableEquals.failIterablesNotEqual(AssertIterableEquals.java:131)
-	at org.junit.jupiter.api.AssertIterableEquals.assertIterableElementsEqual(AssertIterableEquals.java:86)
-	at org.junit.jupiter.api.AssertIterableEquals.assertIterableEquals(AssertIterableEquals.java:72)
-	at org.junit.jupiter.api.AssertIterableEquals.assertIterableEquals(AssertIterableEquals.java:43)
-	at org.junit.jupiter.api.AssertIterableEquals.assertIterableEquals(AssertIterableEquals.java:39)
-	at org.junit.jupiter.api.Assertions.assertIterableEquals(Assertions.java:871)
-	at be.heh.petclinic.component.owner.JdbcOwnerDaoTest.getOwners(JdbcOwnerDaoTest.java:46)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:515)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:171)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:167)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:114)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:59)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:105)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1378)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:110)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1378)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:110)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:92)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$100(JUnitPlatformTestClassProcessor.java:77)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:73)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:131)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.base/java.lang.Thread.run(Thread.java:844)
-</failure>
-  </testcase>
-  <system-out><![CDATA[12:52:40.795 [Test worker] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5de8a487
-12:52:41.005 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Alias definition 'dataSource' ignored since it points to same name
-12:52:41.013 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 2 bean definitions from class path resource [be/heh/petclinic/component/applicationContext.xml]
-12:52:41.045 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dataSource'
-12:52:41.152 [Test worker] INFO org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
-12:52:41.155 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'vetComponent'
+  <testcase name="test()" classname="be.heh.petclinic.component.owner.JdbcOwnerDaoTest" time="0.444"/>
+  <system-out><![CDATA[15:35:12.034 [Test worker] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@66ac672a
+15:35:12.650 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Alias definition 'dataSource' ignored since it points to same name
+15:35:12.656 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 2 bean definitions from class path resource [be/heh/petclinic/component/applicationContext.xml]
+15:35:12.746 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dataSource'
+15:35:13.189 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
+15:35:13.193 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'vetComponent'
 ici
 src\be\heh\petclinic\sql\schemaOwner.sql
-12:52:41.210 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-12:52:41.211 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
-12:52:41.734 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
-12:52:42.098 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: DROP TABLE IF EXISTS owner
-12:52:42.818 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, primary key (id))
-12:52:42.879 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023")
-12:52:43.023 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749")
-12:52:43.083 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763")
-12:52:43.084 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Done executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 1350 ms.
-12:52:43.084 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:13.239 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:13.240 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:14.672 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
+15:35:15.415 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS owner
+15:35:16.043 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, primary key (id))
+15:35:16.103 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023")
+15:35:16.223 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749")
+15:35:16.296 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763")
+15:35:16.297 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 1625 ms.
+15:35:16.298 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
 src\be\heh\petclinic\sql\schemaVet.sql
-12:52:43.087 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-12:52:43.087 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
-12:52:43.163 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
-12:52:43.456 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: DROP TABLE IF EXISTS owner
-12:52:44.018 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, primary key (id))
-12:52:44.078 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023")
-12:52:44.233 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749")
-12:52:44.343 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763")
-12:52:44.343 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Done executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 1179 ms.
-12:52:44.343 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql]
-12:52:44.630 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: DROP TABLE IF EXISTS vet
-12:52:45.272 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 0 returned as updateCount for SQL: CREATE TABLE vet ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, speciality char(45) not null, primary key (id))
-12:52:45.332 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Carter", "James", "none")
-12:52:45.485 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Helen", "Leary", "radiology")
-12:52:45.550 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Douglas", "Linda", "dentistry surgery")
-12:52:45.641 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Ortega", "Rafael", "surgery")
-12:52:45.701 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Stevens", "Henry","radiology")
-12:52:45.761 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - 1 returned as updateCount for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Jenkins", "Sharon","none")
-12:52:45.761 [Test worker] INFO org.springframework.jdbc.datasource.init.ResourceDatabasePopulator - Done executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql] in 1417 ms.
-12:52:45.761 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
-12:52:45.779 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
-12:52:45.780 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-12:52:45.781 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
-12:52:45.880 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:16.304 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:16.304 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:16.369 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
+15:35:16.818 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS owner
+15:35:17.354 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, primary key (id))
+15:35:17.458 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023")
+15:35:17.567 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749")
+15:35:17.672 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763")
+15:35:17.673 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 1304 ms.
+15:35:17.673 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql]
+15:35:18.062 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS vet
+15:35:18.757 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE vet ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, speciality char(45) not null, primary key (id))
+15:35:18.838 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Carter", "James", "none")
+15:35:18.948 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Helen", "Leary", "radiology")
+15:35:19.030 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Douglas", "Linda", "dentistry surgery")
+15:35:19.090 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Ortega", "Rafael", "surgery")
+15:35:19.150 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Stevens", "Henry","radiology")
+15:35:19.222 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Jenkins", "Sharon","none")
+15:35:19.223 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql] in 1549 ms.
+15:35:19.223 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:19.260 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+15:35:19.262 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:19.262 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:19.330 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:19.335 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+15:35:19.336 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO owner (lastname,firstname,address,city,telephone) VALUES (?,?,?,?,?)]
+15:35:19.336 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:19.336 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:19.440 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:19.440 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+15:35:19.441 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:19.441 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:19.495 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:19.499 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+15:35:19.499 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE owner SET lastname = ?, firstname = ?,address = ?,city = ?,telephone = ? WHERE id = ?]
+15:35:19.499 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:19.499 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:19.622 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+15:35:19.623 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+15:35:19.623 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+15:35:19.623 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/test]
+15:35:19.667 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
 ]]></system-out>
   <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
-Fri Nov 16 12:52:41 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Fri Nov 16 12:52:43 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Fri Nov 16 12:52:45 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:13 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:16 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:19 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:19 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:19 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:19 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Nov 16 15:35:19 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
 ]]></system-err>
 </testsuite>
