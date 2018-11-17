@@ -1,5 +1,7 @@
 package be.heh.petclinic;
 
+import be.heh.petclinic.component.owner.OwnerComponent;
+import be.heh.petclinic.component.pet.PetComponent;
 import be.heh.petclinic.component.vet.VetComponent;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.context.ApplicationContext;
@@ -31,10 +33,6 @@ public abstract class AbstractComponentTestBase {
         return new JdbcTemplate(dataSource);
     }
 
-    protected static VetComponent getVetComponent() {
-        return (VetComponent) applicationContext.getBean("vetComponent");
-    }
-
     private static void initMySql(){
         System.out.println("ici");
         DataSource dataSource = (DataSource)applicationContext.getBean("dataSource");
@@ -55,5 +53,17 @@ public abstract class AbstractComponentTestBase {
                 DatabasePopulatorUtils.execute(populator, dataSource);
             }
         }
+    }
+
+    protected static VetComponent getVetComponent(){
+        return (VetComponent)applicationContext.getBean("vetComponent");
+    }
+
+    protected static OwnerComponent getOwnerComponent(){
+        return (OwnerComponent)applicationContext.getBean("ownerComponent");
+    }
+
+    protected static PetComponent getPetComponent(){
+        return (PetComponent)applicationContext.getBean("petComponent");
     }
 }

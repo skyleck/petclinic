@@ -14,15 +14,21 @@ class JdbcPetDao {
     public JdbcPetDao(DataSource dataSource){
         this.dataSource = dataSource;
     }
+
     public Collection<Pet> getPets(){
         JdbcTemplate select = new JdbcTemplate(dataSource);
         return select.query("SELECT * FROM pet", new PetRowMapper());
     }
 
+    public Collection<Pet> getPets(int ownerId){
+        JdbcTemplate template = new JdbcTemplate(dataSource);
+        return template.query("SELECT * FROM pet WHERE ownerId = " + ownerId, new PetRowMapper());
+    }
+
     public void addPet(Pet pet){
         JdbcTemplate template = new JdbcTemplate(dataSource);
-        template.update("INSERT INTO pet (name, birthdate, typepet) VALUES (?,?,?)",
-                new Object[]{pet.getName(),pet.getBirthdate(),pet.getType().toString()});
+        template.update("INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES (?,?,?,?)",
+                new Object[]{pet.getName(),pet.getBirthdate(),pet.getType().toString(),pet.getOwnerId()});
     }
 
     public void updatePet(int id,Pet pet) {

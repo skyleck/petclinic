@@ -46,6 +46,10 @@ public class Owner {
         return this.telephone;
     }
 
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -71,14 +75,6 @@ public class Owner {
         }
     }
 
-    public ArrayList<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(ArrayList<Pet> pets) {
-        this.pets = pets;
-    }
-
     @Override
     public boolean equals(Object obj) {
         return (((Owner) obj).getId() == id &&
@@ -87,5 +83,10 @@ public class Owner {
                 ((Owner) obj).getAddress().equals(address) &&
                 ((Owner) obj).getCity().equals(city) &&
                 ((Owner) obj).getTelephone().equals(telephone));
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + lastname + " " + firstname + " " + address + " " + city + " " + telephone;
     }
 }

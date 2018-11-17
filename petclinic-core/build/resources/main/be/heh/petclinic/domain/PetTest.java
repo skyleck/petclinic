@@ -8,12 +8,12 @@ import java.util.GregorianCalendar;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PetTest {
-/**
+
     Pet pet;
 
     @BeforeEach
     void setUp() {
-        pet = new Pet(0,"Buzz",2018,10,25,TypePet.rabbit);
+        pet = new Pet(0,"Buzz",2018,10,25,TypePet.rabbit,5);
     }
 
     @Test
@@ -37,6 +37,11 @@ class PetTest {
     }
 
     @Test
+    void getOwnerId(){
+        assertEquals(5,pet.getOwnerId());
+    }
+
+    @Test
     void setName() {
         pet.setName("Roger");
         assertEquals("Roger",pet.getName());
@@ -51,7 +56,6 @@ class PetTest {
     @Test
     void setType() {
         pet.setType(TypePet.hamster);
-        assertEquals(TypePet.hamster,pet.getType());
+        assertEquals(TypePet.hamster, pet.getType());
     }
-    */
 }

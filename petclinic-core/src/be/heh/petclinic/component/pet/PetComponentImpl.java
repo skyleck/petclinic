@@ -21,6 +21,11 @@ class PetComponentImpl implements PetComponent{
     }
 
     @Override
+    public  Collection<Pet> getPets(int ownerId){
+        return petDao.getPets(ownerId);
+    }
+
+    @Override
     public void addPet(Pet pet) {
         petDao.addPet(pet);
     }

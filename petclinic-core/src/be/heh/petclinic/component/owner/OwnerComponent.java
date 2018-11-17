@@ -8,12 +8,11 @@ import java.util.Collection;
 
 public interface OwnerComponent {
 
-    Collection<Owner> getOwner() throws Exception;
+    Owner getOwner(int id, Collection<Pet> pets);
+
+    Collection<Owner> getOwners(Collection<Pet> pets);
 
     void addOwner(Owner owner);
 
     void updateOwner(int id, Owner owner);
-
-    void addPetsToOwner(Owner owner, ArrayList<Pet> pets);
-    void addPetsToOwner(ArrayList<Owner> owners, ArrayList<Pet> pets);
 }

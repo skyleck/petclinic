@@ -30,12 +30,11 @@ public class OwnerRestController {
     @CrossOrigin
     @RequestMapping(value = "api/v1/owners", method = RequestMethod.GET)
     public ResponseEntity<Collection<Owner>> getOwners() throws Exception {
-        Collection<Owner> owners = ownerComponentImpl.getOwner();
         Collection<Pet> pets = petComponentImpl.getPets();
+        Collection<Owner> owners = ownerComponentImpl.getOwners(pets);
         if(owners.isEmpty()){
             return new ResponseEntity<Collection<Owner>>(HttpStatus.NOT_FOUND);
         }
-        ownerComponentImpl.addPetsToOwner((ArrayList<Owner>)owners, (ArrayList<Pet>) pets);
         return new ResponseEntity<Collection<Owner>>(owners,HttpStatus.OK);
     }
 

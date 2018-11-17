@@ -17,8 +17,18 @@ class OwnerComponentImpl implements OwnerComponent {
     }
 
     @Override
-    public Collection<Owner> getOwner(){
-        return ownerDao.getOwners();
+    public  Owner getOwner(int id,Collection<Pet> pets){
+        Owner owner = ownerDao.getOwner(id);
+        if(owner != null)
+            addPetsToOwner(owner, (ArrayList<Pet>) pets);
+        return owner;
+    }
+
+    @Override
+    public Collection<Owner> getOwners(Collection<Pet> pets){
+        Collection<Owner> owners = ownerDao.getOwners();
+        addPetsToOwner((ArrayList<Owner>) owners, (ArrayList<Pet>) pets);
+        return owners;
     }
 
     @Override
@@ -31,13 +41,13 @@ class OwnerComponentImpl implements OwnerComponent {
         ownerDao.updateOwner(id,owner);
     }
 
-    public void addPetsToOwner(Owner owner, ArrayList<Pet> pets){
+    private void addPetsToOwner(Owner owner, ArrayList<Pet> pets){
         for (Pet pet: pets) {
             owner.getPets().add(pet);
         }
     }
 
-    public void  addPetsToOwner(ArrayList<Owner> owners, ArrayList<Pet> pets){
+    private void  addPetsToOwner(ArrayList<Owner> owners, ArrayList<Pet> pets){
         Iterator iterator = pets.iterator();
         Pet pet = (Pet)iterator.next();
         for (Owner owner: owners) {
