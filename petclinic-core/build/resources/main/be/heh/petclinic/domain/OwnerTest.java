@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
 class OwnerTest {
 
     Owner owner;
@@ -74,4 +74,5 @@ class OwnerTest {
         owner.setTelephone("0471829365");
         assertEquals("0471829365",owner.getTelephone());
     }
-}
+    }
+ */

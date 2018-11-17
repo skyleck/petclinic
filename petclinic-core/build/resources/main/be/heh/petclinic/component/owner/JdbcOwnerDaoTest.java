@@ -1,5 +1,6 @@
 package be.heh.petclinic.component.owner;
 
+/*
 import be.heh.petclinic.AbstractComponentTestBase;
 import be.heh.petclinic.domain.Owner;
 import be.heh.petclinic.domain.TelephoneNumbeNotValid;
@@ -71,3 +72,4 @@ public class JdbcOwnerDaoTest extends AbstractComponentTestBase {
         assertEquals(owner, test.get(loadOwner.size()-1));
     }
 }
+*/

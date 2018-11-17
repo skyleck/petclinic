@@ -1,7 +1,9 @@
 package be.heh.petclinic.web;
 
 import be.heh.petclinic.component.owner.OwnerComponent;
+import be.heh.petclinic.component.pet.PetComponent;
 import be.heh.petclinic.domain.Owner;
+import be.heh.petclinic.domain.Pet;
 import be.heh.petclinic.domain.TelephoneNumbeNotValid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import static javafx.scene.input.KeyCode.T;
@@ -21,13 +24,18 @@ public class OwnerRestController {
     @Autowired
     OwnerComponent ownerComponentImpl;
 
+    @Autowired
+    PetComponent petComponentImpl;
+
     @CrossOrigin
     @RequestMapping(value = "api/v1/owners", method = RequestMethod.GET)
     public ResponseEntity<Collection<Owner>> getOwners() throws Exception {
         Collection<Owner> owners = ownerComponentImpl.getOwner();
+        Collection<Pet> pets = petComponentImpl.getPets();
         if(owners.isEmpty()){
             return new ResponseEntity<Collection<Owner>>(HttpStatus.NOT_FOUND);
         }
+        ownerComponentImpl.addPetsToOwner((ArrayList<Owner>)owners, (ArrayList<Pet>) pets);
         return new ResponseEntity<Collection<Owner>>(owners,HttpStatus.OK);
     }
 

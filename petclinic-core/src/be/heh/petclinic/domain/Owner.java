@@ -1,5 +1,7 @@
 package be.heh.petclinic.domain;
 
+import java.util.ArrayList;
+
 public class Owner {
     int id;
     private String lastname;
@@ -7,15 +9,17 @@ public class Owner {
     private String address;
     private String city;
     private String telephone;
+    private ArrayList<Pet> pets;
 
-    public Owner(int id, String lastname, String firstname, String address, String city, String telephone)
-                    throws TelephoneNumbeNotValid {
+    public Owner(int id, String lastname, String firstname, String address, String city, String telephone,
+                        ArrayList<Pet> pets)  throws TelephoneNumbeNotValid {
         this.id = id;
         this.lastname = lastname;
         this.firstname = firstname;
         this.address = address;
         this.city = city;
         this.setTelephone(telephone);
+        this.pets = pets;
     }
 
     public int  getId(){
@@ -65,6 +69,14 @@ public class Owner {
         else {
             throw new TelephoneNumbeNotValid("Telephone number is not valid");
         }
+    }
+
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(ArrayList<Pet> pets) {
+        this.pets = pets;
     }
 
     @Override

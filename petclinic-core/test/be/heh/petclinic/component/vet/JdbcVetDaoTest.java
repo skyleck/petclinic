@@ -1,5 +1,5 @@
 package be.heh.petclinic.component.vet;
-
+/*
 import be.heh.petclinic.AbstractComponentTestBase;
 import be.heh.petclinic.domain.Vet;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import java.util.Calendar;
+
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 class JdbcVetDaoTest extends AbstractComponentTestBase {
-
     private JdbcVetDao jdbcVetDao;
     private JdbcTemplate template;
     private Collection<Vet> list;
@@ -40,4 +41,5 @@ class JdbcVetDaoTest extends AbstractComponentTestBase {
         List<Vet> loadVets = jdbcVetDao.getVets();
         assertIterableEquals(list, loadVets);
     }
-}
+
+}*/

@@ -1,4 +1,22 @@
+
+buildscript {
+
+   repositories {
+
+       mavenCentral()
+
+   }
+
+   dependencies {
+
+       classpath "org.liquibase:liquibase-gradle-plugin:2.0.1"
+
+   }
+
+}
+
 apply plugin: 'java'
+apply plugin: 'org.liquibase.gradle'
 
 repositories {
     mavenCentral()

@@ -40,6 +40,7 @@ export class OwnerPage extends Component{
                             <th class="th4">Address</th>
                             <th class="th4">City</th>
                             <th class="th4">Telephone</th>
+                            <th class="th4">Pets</th>
                         </tr>
                     </thead>
                     <tbody>

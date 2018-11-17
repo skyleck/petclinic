@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.List;
 
-public class JdbcVetDao {
+class JdbcVetDao {
 
     private DataSource dataSource;
 

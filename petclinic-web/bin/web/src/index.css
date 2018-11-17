@@ -1,0 +1,33 @@
+body{
+  background-color: #f1f1f1;
+  padding:100px;
+}
+
+table{
+  width: 100%
+}
+
+thead{
+  background-color: black;
+  color: white;
+}
+
+tr{
+  display: flex;
+  flex-direction: row;
+  border-bottom:1px solid black;
+  height: 40px;
+  font-size: 20px;
+}
+
+th{
+  margin-right: 100px;
+  text-orientation: left;
+  width: 50%;
+}
+
+td{
+  margin-right: 100px;
+  width: 50%;
+  text-orientation: left;
+}

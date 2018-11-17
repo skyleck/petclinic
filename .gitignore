@@ -1,3 +1,5 @@
 .idea/
 petclinic.iml
 .gradle/
+petclinic-core/build
+petclinic-web/build

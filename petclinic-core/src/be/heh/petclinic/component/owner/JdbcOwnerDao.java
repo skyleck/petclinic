@@ -1,10 +1,13 @@
 package be.heh.petclinic.component.owner;
 
 import be.heh.petclinic.domain.Owner;
+import be.heh.petclinic.domain.Pet;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 class JdbcOwnerDao {
 
