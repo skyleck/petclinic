@@ -52,3 +52,13 @@ td{
 .td4{
   width: 20%;
 }
+
+label{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+input{
+  margin-top: 10px;
+}

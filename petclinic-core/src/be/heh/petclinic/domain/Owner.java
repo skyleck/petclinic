@@ -11,6 +11,7 @@ public class Owner {
     private String telephone;
     private ArrayList<Pet> pets;
 
+    public Owner(){}
     public Owner(int id, String lastname, String firstname, String address, String city, String telephone,
                         ArrayList<Pet> pets)  throws TelephoneNumbeNotValid {
         this.id = id;
