@@ -47,7 +47,7 @@ export class Vets extends React.Component<VetListProps, VetListState>{
         }
 
         return(
-            <div>
+            <div id="container">
             <h2>Veterinarians</h2>
             <table id="vets">
             <thead>
