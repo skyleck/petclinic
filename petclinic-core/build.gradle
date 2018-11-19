@@ -23,10 +23,6 @@ repositories {
 }
 
 dependencies {
-    liquibaseRuntime 'org.liquibase:liquibase-core:3.6.1'
-    liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:2.0.1'
-    liquibaseRuntime 'mysql:mysql-connector-java:8.0.12'
-    
     compile("org.springframework.boot:spring-boot-starter:2.1.0.RELEASE")
 
     runtime 'mysql:mysql-connector-java:8.0.12'
@@ -43,7 +39,7 @@ dependencies {
 
 def changeLog = "$projectDir/src/be/heh/petclinic/sql/changelog.xml"
 
-task('liquibase') << {
+task('liquibase'){
 println "executing liquibase"
 liquibase {
     activities {

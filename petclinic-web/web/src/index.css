@@ -1,19 +1,8 @@
+
 body{
-  background-color: #f1f1f1;
-  margin: 0px;
-}
-
-nav{
-  background-color: #303030;
-}
-
-nav>a {
-  color: white;
-  text-decoration: none;
-}
-
-#root{
   padding:100px;
+  padding: 0;
+  margin: 0;
 }
 
 table{
@@ -43,4 +32,35 @@ td{
   margin-right: 100px;
   width: 50%;
   text-orientation: left;
+}
+
+#navBar{
+  margin: 0;
+  margin-top: -17px;
+  height: 30px;
+}
+
+#navBar a{
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+}
+
+.navLink{
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+}
+
+#navBar ul{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  padding-left: 10%;
+  height: 100%;
+  justify-content: center;
+}
+
+#container{
+  padding:10%;
 }
