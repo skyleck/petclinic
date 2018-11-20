@@ -39,7 +39,7 @@ public class Pet {
     }
 
     public void setBirthdate(int year, int month, int day) {
-        this.birthdate = new GregorianCalendar(year,(month-1),day);// !!!
+        this.birthdate = new GregorianCalendar(year,month,day);
     }
 
     public void setType(TypePet type) {

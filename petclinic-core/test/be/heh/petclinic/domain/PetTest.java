@@ -49,7 +49,7 @@ class PetTest {
 
     @Test
     void setBirthdate() {
-        pet.setBirthdate(2016,03,13);
+        pet.setBirthdate(2016,02,13);
         assertEquals(new GregorianCalendar(2016,02,13),pet.getBirthdate());
     }
 
