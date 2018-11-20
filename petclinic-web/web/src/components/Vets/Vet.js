@@ -7,7 +7,7 @@ const Vet = ({lastname,firstname,speciality}) => {
         <figure>
             <img src={importImg} alt=""/>
             <figcaption>
-                <div>{lastname + " " + firstname}</div>
+                <div class="nom">{lastname + " " + firstname}</div>
                 <div>{speciality}</div>
             </figcaption>
         </figure>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export default () => (
-    <div id="container">
+    <div class="container">
         <h2>Home</h2>
     </div>
 );
