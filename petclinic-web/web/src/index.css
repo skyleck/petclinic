@@ -1,5 +1,6 @@
 
 body{
+  background-color: #f1f1f1;
   padding:100px;
   padding: 0;
   margin: 0;
@@ -34,17 +35,18 @@ td{
   text-orientation: left;
 }
 
-#navBar{
-  margin: 0;
-  margin-top: -17px;
-  height: 30px;
+.container{
+  padding-top: 50px;
 }
 
-#navBar a{
-  text-decoration: none;
-  color: white;
-  margin-left: 30px;
+#navBar{
+  position: fixed;
+  margin: 0;
+  margin-top: -17px;
+  height: 50px;
+  width: 100%;
 }
+
 
 .navLink{
   text-decoration: none;
@@ -55,12 +57,74 @@ td{
 #navBar ul{
   display: flex;
   list-style: none;
-  background-color: black;
+  background-color: #34302d;
   padding-left: 10%;
   height: 100%;
   justify-content: center;
 }
 
-#container{
-  padding:10%;
+#navBar ul li{
+  display: flex;
+  width: 160px;
+}
+
+#navBar ul li a{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+  font-size: large;
+}
+
+#navBar ul li a p{
+  align-self: center;
+  font-weight: bold;
+}
+
+#navBar ul li a.active{
+  background-color: #6db33f;
+}
+
+.vetsView{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vetsView > div{
+  min-width: calc(100% / 3);
+}
+
+figure{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  align-self: center;
+  border-color: #6db33f;
+  border-width: 4px;
+  border-style: solid;
+}
+
+figcaption{
+  min-width: 160px;
+  background-color: #f0f0f0;
+  border-color: #a0a0a0;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+figcaption div{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import HomePage from './components/Home/HomePage'
-import Vets from './components/Vets/Vets';
+import Vets from './components/Vets/VetsPage';
 import Menu from './components/Menu/Menu'
 
 export default () => (
