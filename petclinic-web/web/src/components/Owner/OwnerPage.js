@@ -33,8 +33,7 @@ export class OwnerPage extends Component{
 
     render(){
         return(
-            <div>
-                <h2>Owners</h2>
+            <div className="container">
                 <div id="owners">
                     {this.state.owners}
                 </div>

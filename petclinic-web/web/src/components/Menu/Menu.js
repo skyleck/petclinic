@@ -20,6 +20,13 @@ export default class Menu extends React.Component {
                             </p>
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink className={window.location.href == "http://localhost:3000/owners/" ? "active" : "#navLink"} exact to="/owners">
+                            <p>
+                                Owners
+                            </p>
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         );

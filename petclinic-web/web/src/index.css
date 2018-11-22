@@ -1,6 +1,8 @@
 
 body{
   background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
 }
 
 .owner0, .owner1{
@@ -14,6 +16,10 @@ body{
 }
 
 .owner1{
+  background-color: #ffffff;
+}
+
+.owner1 + .pets{
   background-color: #ffffff;
 }
 
@@ -127,13 +133,13 @@ body{
   min-width: calc(100% / 3);
 }
 
-figure{
+.vetsView figure{
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-img{
+.vetsView img{
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -143,7 +149,7 @@ img{
   border-style: solid;
 }
 
-figcaption{
+.vetsView figcaption{
   min-width: 160px;
   background-color: #fdfdfd;
   border-color: #34302d;
@@ -153,7 +159,7 @@ figcaption{
   margin-top: 5px;
 }
 
-figcaption div{
+.vetsView figcaption div{
   margin-top: 5px;
   margin-bottom: 5px;
 }
