@@ -15,10 +15,12 @@ export class OwnerPage extends Component{
         this.getOwner()
             .then((response) => {
                 let owners = []
+                let i = 0;
                 response.data.forEach(owner => {
                     owners.push(
-                        <Owner key={owner.lastname}{...owner}/>
+                        <Owner key={owner.lastname}{...owner} i={i}/>
                     )
+                    i++
                 });
                 console.log(owners)
                 this.setState({owners})
@@ -33,20 +35,9 @@ export class OwnerPage extends Component{
         return(
             <div>
                 <h2>Owners</h2>
-                <table>
-                    <thead>
-                        <tr >
-                            <th class="th4">Name</th>
-                            <th class="th4">Address</th>
-                            <th class="th4">City</th>
-                            <th class="th4">Telephone</th>
-                            <th class="th4">Pets</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.owners}
-                    </tbody>
-                </table>
+                <div id="owners">
+                    {this.state.owners}
+                </div>
             </div>
         )
     }
