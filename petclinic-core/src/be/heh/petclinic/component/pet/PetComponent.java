@@ -7,6 +7,8 @@ import java.util.Collection;
 public interface PetComponent {
     Collection<Pet> getPets();
 
+    Collection<Pet> getPets(int ownerId);
+
     void addPet(Pet pet);
 
     void updatePet(int id, Pet updatePet);

@@ -7,6 +7,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+    <orderEntry type="library" name="petclinic-core" level="project" />
+    <orderEntry type="module" module-name="resources" />
+    <orderEntry type="module" module-name="petclinic-core" />
+=======
     <orderEntry type="library" name="petclinic-core1" level="project" />
     <orderEntry type="library" name="petclinic-core" level="project" />
     <orderEntry type="module" module-name="petclinic-core" />
@@ -15,5 +20,6 @@
     <orderEntry type="library" name="org.junit.jupiter:junit-jupiter-engine:5.3.1" level="project" />
     <orderEntry type="library" name="org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="org.springframework:spring-jdbc:3.2.4.RELEASE" level="project" />
+>>>>>>> pets
   </component>
 </module>

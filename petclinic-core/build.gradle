@@ -27,7 +27,6 @@ dependencies {
 
     runtime 'mysql:mysql-connector-java:8.0.12'
 
-    compile("org.springframework:spring-jdbc:3.2.4.RELEASE")
     testCompile group: 'org.springframework', name: 'spring-test', version: '4.0.5.RELEASE'
 
     testCompile('org.junit.jupiter:junit-jupiter-api:5.3.1')
@@ -37,6 +36,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.2.RELEASE'
 }
 
+<<<<<<< HEAD
 def changeLog = "$projectDir/src/be/heh/petclinic/sql/changelog.xml"
 
 task('liquibase'){
@@ -53,11 +53,10 @@ liquibase {
 }    
 }
 
+=======
+>>>>>>> owners
 test{
     useJUnitPlatform()
-    testLogging{
-        showStandardStreams = true
-    }
 }
 
 sourceSets {

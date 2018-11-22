@@ -9,14 +9,15 @@ public class Pet {
     private String name;
     private Calendar birthdate;
     private TypePet type;
+    private int ownerId;
     //private ArrayList<Visit> visits;
 
-    public Pet(int id,String name, int year, int month, int day, TypePet type) {
+    public Pet(int id,String name, int year, int month, int day, TypePet type, int ownerId) {
         this.id=id;
         this.name = name;
-        month = month-1; // Car janvier = l'index 0 de la liste !!!
         this.birthdate = new GregorianCalendar(year,month,day);
         this.type = type;
+        this.ownerId = ownerId;
     }
 
     public int getId() { return this.id; }
@@ -38,11 +39,15 @@ public class Pet {
     }
 
     public void setBirthdate(int year, int month, int day) {
-        this.birthdate = new GregorianCalendar(year,(month-1),day);// !!!
+        this.birthdate = new GregorianCalendar(year,month,day);
     }
 
     public void setType(TypePet type) {
         this.type = type;
+    }
+
+    public int getOwnerId(){
+        return  ownerId;
     }
 
     /*public ArrayList<Visit> getvisits() {
@@ -56,11 +61,15 @@ public class Pet {
     @Override
     public boolean equals(Object obj) {
         Calendar calendar = ((Pet)obj).getBirthdate();
-
+        System.out.println("PO : " + calendar.get(Calendar.YEAR) + " == " + this.getBirthdate().get(Calendar.YEAR));
         return (((Pet) obj).getId()==this.getId()
                 &&((Pet) obj).getName().equals(this.getName())
-                //&& ((Pet) obj).getBirthdate().equals(this.getBirthdate())
-                &&(int)calendar.get(Calendar.YEAR) == (int)this.getBirthdate().get(Calendar.YEAR)
-                && ((Pet) obj).getType().equals(this.getType()));
+                && ((Pet) obj).getBirthdate().get(Calendar.YEAR) == this.getBirthdate().get(Calendar.YEAR))
+                && ((Pet) obj).getType().equals(this.getType());
+    }
+
+    @Override
+    public String toString() {
+        return  birthdate.get(Calendar.YEAR) + " " + birthdate.get(Calendar.MONTH) + " " + birthdate.get(Calendar.DAY_OF_MONTH);
     }
 }

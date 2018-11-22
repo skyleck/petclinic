@@ -6,26 +6,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import java.util.Calendar;
-
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-class JdbcVetDaoTest extends AbstractComponentTestBase {
-    private JdbcVetDao jdbcVetDao;
-    private JdbcTemplate template;
+public class VetComponentTests extends AbstractComponentTestBase {
+
     private Collection<Vet> list;
 
     @BeforeEach
-    public void setUp(){
-        DataSource dataSource = (DataSource)applicationContext.getBean("dataSource");
-        template = getJdbcTemplate();
-        jdbcVetDao = new JdbcVetDao(dataSource);
-
+    public void setUp() {
         list = new ArrayList<Vet>();
 
         list.add(new Vet("Carter", "James", "none"));
@@ -37,8 +29,7 @@ class JdbcVetDaoTest extends AbstractComponentTestBase {
     }
 
     @Test
-    public void test_getVets(){
-        List<Vet> loadVets = jdbcVetDao.getVets();
-        assertIterableEquals(list, loadVets);
+    public void getVets(){
+        assertIterableEquals(list, getVetComponent().getVets());
     }
 }
