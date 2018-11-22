@@ -1,6 +1,5 @@
 body{
   background-color: #f1f1f1;
-  margin: 0px;
 }
 
 nav{
@@ -10,10 +9,6 @@ nav{
 nav>a {
   color: white;
   text-decoration: none;
-}
-
-#root{
-  padding:100px;
 }
 
 table{
@@ -61,4 +56,52 @@ label{
 
 input{
   margin-top: 10px;
+}
+
+.owner0{
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+}
+
+.owner0 div{
+  min-width: 50%;
+}
+.owner1{
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.owner1 div{
+  min-width: 50%;
+}
+
+.owner0:hover{
+  background-color: green;
+}
+
+.owner1:hover{
+  background-color: green;
+}
+
+#owners{
+  display: flex;
+  flex-direction: column;
+}
+
+#owners .title{
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.pets {
+  height: 0px;
+  transition: height 1s ease-in-out;
+}
+
+.ownerPet:hover .pets{
+  height: 100px;
 }
