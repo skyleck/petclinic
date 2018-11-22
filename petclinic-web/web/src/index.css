@@ -2,89 +2,26 @@ body{
   background-color: #f1f1f1;
 }
 
-nav{
-  background-color: #303030;
-}
-
-nav>a {
-  color: white;
-  text-decoration: none;
-}
-
-table{
-  width: 100%
-}
-
-thead{
-  background-color: black;
-  color: white;
-}
-
-tr{
+.owner0, .owner1{
   display: flex;
-  flex-direction: row;
-  border-bottom:1px solid black;
-  height: 40px;
-  font-size: 20px;
-}
-
-th{
-  margin-right: 100px;
-  text-orientation: left;
-  width: 50%;
-}
-
-td{
-  margin-right: 100px;
-  width: 50%;
-  text-orientation: left;
-}
-
-.th4{
-  width: 20%;
-}
-
-.td4{
-  width: 20%;
-}
-
-label{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-}
-
-input{
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .owner0{
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: #f1f1f1;
 }
 
-.owner0 div{
-  min-width: 50%;
-}
 .owner1{
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: #ffffff;
 }
 
-.owner1 div{
+.owner0 div, .owner1 div{
   min-width: 50%;
 }
 
-.owner0:hover{
-  background-color: green;
-}
-
-.owner1:hover{
-  background-color: green;
+.owner0:hover, .owner1:hover{
+  background-color: #6db33f
 }
 
 #owners{
@@ -98,10 +35,39 @@ input{
 }
 
 .pets {
-  height: 0px;
-  transition: height 1s ease-in-out;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  line-height: 0;
 }
 
-.ownerPet:hover .pets{
-  height: 100px;
+.ownerPet:hover .petsInfo{
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.petsInfo{
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  line-height: 0;
+  display: flex;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pets img{
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  margin-right: 20px;
+  height: 0;
+  width: 60px;
+}
+
+.ownerPet:hover .pets img {
+  height: 60px;
+}
+
+.petsInfo span{
+  font-weight: bold;
 }
