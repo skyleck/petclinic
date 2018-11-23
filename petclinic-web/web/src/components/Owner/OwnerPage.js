@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Owner from './Owner'
 import React, { Component } from 'react'
+import { Link,NavLink } from 'react-router-dom';
 
 export class OwnerPage extends Component{
 
@@ -34,6 +35,9 @@ export class OwnerPage extends Component{
     render(){
         return(
             <div className="container">
+                <NavLink exact to="/addOwner"><button type="button">
+                    Add Owner
+                </button></NavLink>
                 <div id="owners">
                     {this.state.owners}
                 </div>

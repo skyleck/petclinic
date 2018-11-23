@@ -171,3 +171,44 @@ body{
 .petsInfo span{
   font-weight: bold;
 }
+
+button{
+  padding: 12px 24px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  background-color: #6db33f;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+form .myInput, .error{
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+form .error{
+  border-color: red;
+  border-style: solid;
+  border-width: 1px;
+}
+
+form label{
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=submit]{
+  padding: 14px 20px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  background-color: #6db33f;
+}

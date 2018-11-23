@@ -38,15 +38,19 @@ public class OwnerRestController {
 
     @CrossOrigin
     @RequestMapping(value = "api/v1/addOwner", method = RequestMethod.POST)
-    public ResponseEntity<?> addOwner(HttpServletRequest request) throws TelephoneNumbeNotValid {
-        String lastname = request.getParameter("lastname");
-        String firstname = request.getParameter("firstname");
-        String address = request.getParameter("address");
-        String city = request.getParameter("city");
-        String telephone = request.getParameter("telephone");
+    public ResponseEntity<?> addOwner(HttpServletRequest request){
+        try {
+            String lastname = request.getParameter("lastname");
+            String firstname = request.getParameter("firstname");
+            String address = request.getParameter("address");
+            String city = request.getParameter("city");
+            String telephone = request.getParameter("telephone");
 
-        ownerComponentImpl.addOwner(new Owner(-1,lastname,firstname,address,city,telephone,null));
-        return new ResponseEntity<String>(HttpStatus.OK);
+            ownerComponentImpl.addOwner(new Owner(-1, lastname, firstname, address, city, telephone, null));
+            return new ResponseEntity<String>(HttpStatus.OK);
+        } catch (TelephoneNumbeNotValid e){
+            return new ResponseEntity<String>("TelephoneNumberNotValid",HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @RequestMapping(value = "api/v1/updateOwner", method = RequestMethod.PUT)
