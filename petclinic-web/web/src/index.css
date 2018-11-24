@@ -23,8 +23,8 @@ body{
   background-color: #ffffff;
 }
 
-.owner0 div, .owner1 div{
-  min-width: 50%;
+.owner0 > div, .owner1 > div{
+  min-width: calc(100% / 3);
 }
 
 .owner0:hover, .owner1:hover{
@@ -211,4 +211,39 @@ input[type=submit]{
   border: 1px solid grey;
   border-radius: 4px;
   background-color: #6db33f;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buttonsOwner{
+  display: flex;
+}
+
+.addButton, .updateButton, .deleteButton{
+  margin: 2px;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+
+.addButton{
+  background-color: #457128;
+}
+
+.updateButton{
+  background-color: #3a5e21;
+}
+
+.deleteButton{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2e4b1b;
+  line-height: 55px;
 }
