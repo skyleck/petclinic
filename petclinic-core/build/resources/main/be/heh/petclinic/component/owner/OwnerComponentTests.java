@@ -3,14 +3,12 @@ package be.heh.petclinic.component.owner;
 import be.heh.petclinic.AbstractComponentTestBase;
 import be.heh.petclinic.domain.Owner;
 import be.heh.petclinic.domain.Pet;
-import be.heh.petclinic.domain.TelephoneNumbeNotValid;
+import be.heh.petclinic.domain.Exception.TelephoneNumbeNotValid;
 import be.heh.petclinic.domain.TypePet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;

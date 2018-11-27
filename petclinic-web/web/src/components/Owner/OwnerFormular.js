@@ -25,37 +25,40 @@ export class OwnerFormular extends Component{
         this.setState({
             [name]: value
         });
-    }
+    };
 
     validInput = (value) => {
         if(value === '')
-            return false
+            return false;
         return true
-    }
+    };
 
     validForm = () => {
-        return this.state.lastname && this.state.firstname && this.state.address && this.state.city && this.state.telephone;
-    }
+        return this.state.lastnameState && this.state.firstnameState && this.state.addressState
+                && this.state.cityState && this.state.telephoneState;
+    };
 
     handleSubmit = event => {
         event.preventDefault();
 
         this.setState({
-            lastnameState: this.validInput(this.state.lastname) ? true : false,
-            firstnameState: this.validInput(this.state.firstname) ? true : false,
-            addressState: this.validInput(this.state.address) ? true : false,
-            cityState: this.validInput(this.state.city) ? true : false,
-            telephoneState: this.validInput(this.state.telephone) ? true : false,
-        })
-        if(this.validForm) {
+            lastnameState: this.validInput(this.state.lastname),
+            firstnameState: this.validInput(this.state.firstname),
+            addressState: this.validInput(this.state.address),
+            cityState: this.validInput(this.state.city),
+            telephoneState: this.validInput(this.state.telephone),
+        });
+        console.log(this.validInput(this.state.address));
+        console.log(this.state.addressState);
+        console.log(this.validForm());
+        if(this.validForm()) {
             const owner = querystring.stringify({
-                id: "-1",
+                id: '-1',
                 lastname: this.state.lastname,
                 firstname: this.state.firstname,
                 address: this.state.address,
                 city: this.state.city,
-                telephone: this.state.telephone,
-                end: "null"
+                telephone: this.state.telephone
             });
 
             const config = {
@@ -65,7 +68,7 @@ export class OwnerFormular extends Component{
                 }
             };
             console.log({owner});
-            axios.post('http://localhost:8080/api/v1/addOwner', {owner}, config)
+            axios.post('http://localhost:8080/api/v1/addOwner', owner, config)
                   .catch((error) => {
                     console.log(error.response.data);
                     if(error.response.data === "TelephoneNumberNotValid"){
@@ -75,13 +78,13 @@ export class OwnerFormular extends Component{
                     }
                 });
         }
-    }
+    };
 
     changeColor = () => {
         this.setState({
             test: !this.state.test
         })
-    }
+    };
 
     render(){
         return(

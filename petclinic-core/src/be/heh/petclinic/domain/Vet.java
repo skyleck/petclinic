@@ -1,28 +1,31 @@
 package be.heh.petclinic.domain;
 
-public class Vet {
+import be.heh.petclinic.domain.Exception.NullValueException;
+
+public class Vet extends AModelObject{
 
     private String lastname;
     private String firstname;
     private String speciality;
 
     public Vet(){}
-    public Vet(String lastname, String firstname, String speciality){
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.speciality = speciality;
+
+    public Vet(String lastname, String firstname, String speciality) throws NullValueException {
+        this.setLastname(lastname);
+        this.setFirstname(firstname);
+        this.setSpeciality(speciality);
     }
 
-    public void setLastname(String lastname){
-        this.lastname = lastname;
+    public void setLastname(String lastname) throws NullValueException {
+        this.setStringField(Vet.class,"lastname", lastname);
     }
 
-    public void setFirstname(String firstname){
-        this.firstname = firstname;
+    public void setFirstname(String firstname) throws NullValueException {
+        this.setStringField(Vet.class,"firstname", firstname);
     }
 
-    public void setSpeciality(String speciality){
-        this.speciality = speciality;
+    public void setSpeciality(String speciality) throws NullValueException {
+        this.setStringField(Vet.class,"speciality", speciality);
     }
 
     public String getLastname(){

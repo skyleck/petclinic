@@ -1,4 +1,4 @@
-package be.heh.petclinic.domain;
+package be.heh.petclinic.domain.Exception;
 
 import java.io.IOException;
 

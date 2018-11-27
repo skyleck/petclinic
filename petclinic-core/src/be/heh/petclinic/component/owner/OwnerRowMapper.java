@@ -1,8 +1,9 @@
 package be.heh.petclinic.component.owner;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
 import be.heh.petclinic.domain.Owner;
 import be.heh.petclinic.domain.Pet;
-import be.heh.petclinic.domain.TelephoneNumbeNotValid;
+import be.heh.petclinic.domain.Exception.TelephoneNumbeNotValid;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -24,6 +25,8 @@ public class OwnerRowMapper  implements RowMapper<Owner> {
                                     new ArrayList<Pet>());
         } catch (TelephoneNumbeNotValid telephoneNumbeNotValid) {
             telephoneNumbeNotValid.printStackTrace();
+        } catch (NullValueException e) {
+            e.printStackTrace();
         }
         return owner;
     }

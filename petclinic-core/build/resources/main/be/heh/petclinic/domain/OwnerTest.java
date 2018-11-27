@@ -1,5 +1,6 @@
 package be.heh.petclinic.domain;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,25 +60,31 @@ class OwnerTest {
     }
 
     @Test
-    void setLastname() {
+    void setLastname() throws NullValueException {
+        assertThrows(NullValueException.class, () -> {
+            owner.setLastname(null);
+        });
+        assertThrows(NullValueException.class, () -> {
+            owner.setLastname("");
+        });
         owner.setLastname("Harpignies");
         assertEquals("Harpignies",owner.getLastname());
     }
 
     @Test
-    void setFirstname() {
+    void setFirstname() throws NullValueException {
         owner.setFirstname("Adrien");
         assertEquals("Adrien",owner.getFirstname());
     }
 
     @Test
-    void setAddress() {
+    void setAddress() throws NullValueException {
         owner.setAddress("no address");
         assertEquals("no address",owner.getAddress());
     }
 
     @Test
-    void setCity() {
+    void setCity() throws NullValueException {
         owner.setCity("Mons");
         assertEquals("Mons",owner.getCity());
     }

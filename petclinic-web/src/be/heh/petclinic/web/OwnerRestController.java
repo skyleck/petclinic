@@ -2,19 +2,17 @@ package be.heh.petclinic.web;
 
 import be.heh.petclinic.component.owner.OwnerComponent;
 import be.heh.petclinic.component.pet.PetComponent;
+import be.heh.petclinic.domain.Exception.NullValueException;
 import be.heh.petclinic.domain.Owner;
 import be.heh.petclinic.domain.Pet;
-import be.heh.petclinic.domain.TelephoneNumbeNotValid;
+import be.heh.petclinic.domain.Exception.TelephoneNumbeNotValid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.Collection;
-
-import static javafx.scene.input.KeyCode.T;
 
 @RestController
 public class OwnerRestController {
@@ -45,11 +43,12 @@ public class OwnerRestController {
             String address = request.getParameter("address");
             String city = request.getParameter("city");
             String telephone = request.getParameter("telephone");
-
             ownerComponentImpl.addOwner(new Owner(-1, lastname, firstname, address, city, telephone, null));
             return new ResponseEntity<String>(HttpStatus.OK);
         } catch (TelephoneNumbeNotValid e){
             return new ResponseEntity<String>("TelephoneNumberNotValid",HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (NullValueException e) {
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

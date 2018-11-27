@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="be.heh.petclinic.component.owner.OwnerComponentTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-27T15:28:53" hostname="DESKTOP-IISQM2V" time="1.126">
+  <properties/>
+  <testcase name="test()" classname="be.heh.petclinic.component.owner.OwnerComponentTests" time="1.126"/>
+  <system-out><![CDATA[16:28:31.050 [Test worker] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@43ffadb6
+16:28:31.328 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Alias definition 'dataSource' ignored since it points to same name
+16:28:31.479 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 6 bean definitions from URL [file:/C:/Users/Hempte%20Maxime/Documents/Projet/petclinic/petclinic-core/build/resources/main/be/heh/petclinic/config.xml]
+16:28:31.525 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 1 bean definitions from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\build\resources\main\be\heh\petclinic\component\owner\component.xml]
+16:28:31.549 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 1 bean definitions from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\build\resources\main\be\heh\petclinic\component\pet\component.xml]
+16:28:31.567 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 1 bean definitions from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\build\resources\main\be\heh\petclinic\component\vet\component.xml]
+16:28:31.568 [Test worker] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 9 bean definitions from class path resource [be/heh/petclinic/component/applicationContext.xml]
+16:28:31.611 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+16:28:31.668 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+16:28:31.671 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+16:28:31.674 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+16:28:31.676 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+16:28:31.688 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dataSource'
+16:28:31.773 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
+16:28:31.773 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ownerComponent'
+16:28:31.788 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Autowiring by type from bean name 'ownerComponent' via constructor to bean named 'dataSource'
+16:28:31.792 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'petComponent'
+16:28:31.796 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'vetComponent'
+ici
+src\be\heh\petclinic\sql\Pet_CreateTable.sql
+16:28:31.832 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:31.832 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:32.381 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql]
+16:28:33.068 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS pet
+16:28:34.422 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE pet ( id int NOT NULL AUTO_INCREMENT, name varchar(45) not null, birthdate date not null, typepet varchar(30) not null, ownerId int NOT NULL, primary key (id) )
+16:28:34.653 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Grandma","2000-01-01","cat",1)
+16:28:34.984 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Kaa","2018-10-25","snake",1)
+16:28:35.148 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Leo","2010-09-07","hamster",1)
+16:28:35.380 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Basil","2012-08-06","hamster",2)
+16:28:35.616 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Jewel","2010-03-07","dog",3)
+16:28:35.848 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Rosy","2011-04-17","dog",3)
+16:28:35.849 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql] in 3468 ms.
+16:28:35.849 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+src\be\heh\petclinic\sql\schemaOwner.sql
+16:28:35.851 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:35.851 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:35.915 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql]
+16:28:37.009 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS pet
+16:28:38.652 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE pet ( id int NOT NULL AUTO_INCREMENT, name varchar(45) not null, birthdate date not null, typepet varchar(30) not null, ownerId int NOT NULL, primary key (id) )
+16:28:38.938 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Grandma","2000-01-01","cat",1)
+16:28:39.269 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Kaa","2018-10-25","snake",1)
+16:28:39.707 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Leo","2010-09-07","hamster",1)
+16:28:40.260 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Basil","2012-08-06","hamster",2)
+16:28:40.564 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Jewel","2010-03-07","dog",3)
+16:28:40.773 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Rosy","2011-04-17","dog",3)
+16:28:40.774 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql] in 4858 ms.
+16:28:40.774 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
+16:28:41.809 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS owner
+16:28:42.832 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, pets varchar(200) not null, primary key (id))
+16:28:43.036 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023","Grandma Kaa Leo")
+16:28:43.206 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749","Basil")
+16:28:43.420 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763","Jewel Rosy")
+16:28:43.421 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 2647 ms.
+16:28:43.421 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+src\be\heh\petclinic\sql\schemaVet.sql
+16:28:43.422 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:43.422 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:43.468 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql]
+16:28:44.228 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS pet
+16:28:45.221 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE pet ( id int NOT NULL AUTO_INCREMENT, name varchar(45) not null, birthdate date not null, typepet varchar(30) not null, ownerId int NOT NULL, primary key (id) )
+16:28:45.952 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Grandma","2000-01-01","cat",1)
+16:28:46.334 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Kaa","2018-10-25","snake",1)
+16:28:46.637 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Leo","2010-09-07","hamster",1)
+16:28:46.858 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Basil","2012-08-06","hamster",2)
+16:28:47.063 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Jewel","2010-03-07","dog",3)
+16:28:47.257 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO pet (name, birthdate, typepet,ownerId) VALUES ("Rosy","2011-04-17","dog",3)
+16:28:47.258 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\Pet_CreateTable.sql] in 3790 ms.
+16:28:47.259 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql]
+16:28:48.639 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS owner
+16:28:49.912 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE owner ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, address varchar(45) not null, city varchar(45) not null, telephone varchar(45) not null, pets varchar(200) not null, primary key (id))
+16:28:50.084 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Franklin","George","10 W.Liberty St.","Madison","6085551023","Grandma Kaa Leo")
+16:28:50.429 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Davis","Betty","638 Cardinal Ave.","Sun Prairie","6085551749","Basil")
+16:28:50.660 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO owner (lastname, firstname, address,city,telephone,pets) VALUES ("Rodriquez","Eduardo","2693 Commerce St.","McFarland", "6085558763","Jewel Rosy")
+16:28:50.661 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaOwner.sql] in 3402 ms.
+16:28:50.661 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql]
+16:28:51.452 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS vet
+16:28:52.472 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE vet ( id int NOT NULL AUTO_INCREMENT, lastname varchar(45) not null, firstname varchar(45) not null, speciality char(45) not null, primary key (id))
+16:28:52.702 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Carter", "James", "none")
+16:28:53.072 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Helen", "Leary", "radiology")
+16:28:53.415 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Douglas", "Linda", "dentistry surgery")
+16:28:53.624 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Ortega", "Rafael", "surgery")
+16:28:53.796 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Stevens", "Henry","radiology")
+16:28:53.978 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT INTO vet (lastname, firstname, speciality) VALUES ("Jenkins", "Sharon","none")
+16:28:53.980 [Test worker] DEBUG org.springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from file [C:\Users\Hempte Maxime\Documents\Projet\petclinic\petclinic-core\src\be\heh\petclinic\sql\schemaVet.sql] in 3319 ms.
+16:28:53.980 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:53.992 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet WHERE ownerId = 1]
+16:28:53.993 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:53.993 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 0
+TETSTA : 9
+TETSTA : 8
+16:28:54.058 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.066 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner WHERE id = 1]
+16:28:54.066 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.066 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.109 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.109 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet WHERE ownerId = 2]
+16:28:54.110 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.110 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 7
+16:28:54.166 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.167 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner WHERE id = 2]
+16:28:54.167 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.167 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.220 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.220 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet WHERE ownerId = 3]
+16:28:54.220 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.220 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 2
+TETSTA : 3
+16:28:54.266 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.266 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner WHERE id = 3]
+16:28:54.266 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.267 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.313 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.314 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet WHERE ownerId = 4]
+16:28:54.314 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.314 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.355 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.356 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner WHERE id = 4]
+16:28:54.356 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.356 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.399 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.400 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet]
+16:28:54.400 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.400 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 0
+TETSTA : 9
+TETSTA : 8
+TETSTA : 7
+TETSTA : 2
+TETSTA : 3
+16:28:54.448 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.449 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+16:28:54.449 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.449 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.492 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.495 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+16:28:54.495 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO owner (lastname,firstname,address,city,telephone,pets) VALUES (?,?,?,?,?,?)]
+16:28:54.496 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.496 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.718 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.719 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet]
+16:28:54.719 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.720 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 0
+TETSTA : 9
+TETSTA : 8
+TETSTA : 7
+TETSTA : 2
+TETSTA : 3
+16:28:54.767 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.768 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+16:28:54.768 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.768 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:54.815 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:54.817 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+16:28:54.817 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE owner SET lastname = ?, firstname = ?,address = ?,city = ?,telephone = ?, pets = ? WHERE id = ?]
+16:28:54.817 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:54.817 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:55.023 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:55.023 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM pet]
+16:28:55.024 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:55.024 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+TETSTA : 0
+TETSTA : 9
+TETSTA : 8
+TETSTA : 7
+TETSTA : 2
+TETSTA : 3
+16:28:55.064 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+16:28:55.064 [Test worker] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM owner]
+16:28:55.064 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:28:55.065 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://192.168.99.100:3306/petclinic]
+16:28:55.107 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+]]></system-out>
+  <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+Tue Nov 27 16:28:31 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:35 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:43 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:53 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:54 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:55 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Nov 27 16:28:55 CET 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+]]></system-err>
+</testsuite>
