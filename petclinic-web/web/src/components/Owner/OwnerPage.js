@@ -15,18 +15,18 @@ export class OwnerPage extends Component{
     setOwners = () => {
         this.getOwner()
             .then((response) => {
-                let owners = []
+                let owners = [];
                 let i = 0;
                 response.data.forEach(owner => {
                     owners.push(
                         <Owner key={owner.lastname}{...owner} i={i}/>
-                    )
+                    );
                     i++
                 });
-                console.log(owners)
+                console.log(owners);
                 this.setState({owners})
         })
-    }
+    };
 
     componentWillMount(){
         this.setOwners()

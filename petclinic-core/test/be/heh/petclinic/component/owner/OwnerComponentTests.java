@@ -1,6 +1,7 @@
 package be.heh.petclinic.component.owner;
 
 import be.heh.petclinic.AbstractComponentTestBase;
+import be.heh.petclinic.domain.Exception.NullValueException;
 import be.heh.petclinic.domain.Owner;
 import be.heh.petclinic.domain.Pet;
 import be.heh.petclinic.domain.Exception.TelephoneNumbeNotValid;
@@ -18,7 +19,7 @@ public class OwnerComponentTests extends AbstractComponentTestBase {
     private ArrayList<Owner> list;
 
     @BeforeEach
-    public void setUp() throws TelephoneNumbeNotValid {
+    public void setUp() throws TelephoneNumbeNotValid, NullValueException {
         list = new ArrayList<Owner>();
 
         ArrayList<Pet> petsOwner1 = new ArrayList<Pet>();
@@ -42,7 +43,7 @@ public class OwnerComponentTests extends AbstractComponentTestBase {
     }
 
     @Test
-    void test() throws TelephoneNumbeNotValid {
+    void test() throws TelephoneNumbeNotValid, NullValueException {
         getOwner();
         getOwners();
         addOwner();
@@ -60,7 +61,7 @@ public class OwnerComponentTests extends AbstractComponentTestBase {
         assertIterableEquals(list, getOwnerComponent().getOwners(getPetComponent().getPets()));
     }
 
-    void addOwner() throws TelephoneNumbeNotValid {
+    void addOwner() throws TelephoneNumbeNotValid, NullValueException {
         ArrayList<Pet> petsOwner = new ArrayList<Pet>();
         Owner owner = new Owner(4,"test","test","test","test",
                 "0425636696",petsOwner);
@@ -69,7 +70,7 @@ public class OwnerComponentTests extends AbstractComponentTestBase {
         assertEquals(owner, loadOwner.get(loadOwner.size()-1));
     }
 
-    void updateOwner() throws TelephoneNumbeNotValid {
+    void updateOwner() throws TelephoneNumbeNotValid, NullValueException {
         ArrayList<Pet> petsOwner = new ArrayList<Pet>();
         petsOwner.add(new Pet(7,"test",2005,12,05,TypePet.snake,4));
         Owner owner = new Owner(4, "Louzo","Stan","89 Avenue du Roi","Mouscron",

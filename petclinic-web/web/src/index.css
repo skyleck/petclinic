@@ -201,6 +201,11 @@ form .error{
   border-width: 1px;
 }
 
+.textError{
+  color: red;
+  margin-bottom: 10px;
+}
+
 form label{
   display: flex;
   flex-direction: column;
