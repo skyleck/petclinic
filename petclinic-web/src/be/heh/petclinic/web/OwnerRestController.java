@@ -53,8 +53,21 @@ public class OwnerRestController {
     }
 
     @RequestMapping(value = "api/v1/updateOwner", method = RequestMethod.PUT)
-    public ResponseEntity<?>  updateOwner(int id, Owner owner) {
-        ownerComponentImpl.updateOwner(id,owner);
-        return  new ResponseEntity<String>(HttpStatus.OK);
+    public ResponseEntity<?>  updateOwner(HttpServletRequest request) {
+        try {
+            int id = Integer.valueOf(request.getParameter("id"));
+            String lastname = request.getParameter("lastname");
+            String firstname = request.getParameter("firstname");
+            String address = request.getParameter("address");
+            String city = request.getParameter("city");
+            String telephone = request.getParameter("telephone");
+            Owner owner = new Owner(id, lastname, firstname, address, city, telephone, null);
+            ownerComponentImpl.updateOwner(id,owner);
+            return new ResponseEntity<String>(HttpStatus.OK);
+        } catch (TelephoneNumbeNotValid e){
+            return new ResponseEntity<String>("TelephoneNumberNotValid",HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (NullValueException e) {
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

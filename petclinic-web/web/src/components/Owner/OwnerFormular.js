@@ -66,7 +66,7 @@ export class OwnerFormular extends Component{
             error:'',
         });
         const owner = querystring.stringify({
-            id: '-1',
+            id: this.props.location.state !== undefined ? this.props.location.state.owner.id : '-1',
             lastname: this.state.lastname,
             firstname: this.state.firstname,
             address: this.state.address,
