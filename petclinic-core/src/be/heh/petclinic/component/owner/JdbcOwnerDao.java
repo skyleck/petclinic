@@ -46,7 +46,7 @@ class JdbcOwnerDao {
     public void updateOwner(int id, Owner owner){
         JdbcTemplate template = new JdbcTemplate(dataSource);
         StringBuilder pets = new StringBuilder();
-        if(owner.getPets().size() != 0){
+        if(owner.getPets() != null && owner.getPets().size() != 0){
             for (Pet pet:owner.getPets()) {
                 pets.append(pet.getName() + " ");
             }

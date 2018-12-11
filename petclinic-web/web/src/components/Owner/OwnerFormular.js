@@ -80,28 +80,54 @@ export class OwnerFormular extends Component{
                 'Accept': 'application/json;'
             }
         };
-        axios.post('http://localhost:8080/api/v1/addOwner', owner, config)
-            .then(res => {
-                this.setState({
-                    errorState:false
-                });
-            })
-            .catch((error) => {
-                console.log(error.response.data);
-                if(error.response.data === "TelephoneNumberNotValid"){
+        if(this.props.location.state !== undefined){
+            axios.put('http://localhost:8080/api/v1/updateOwner', owner, config)
+                .then(res => {
                     this.setState({
-                        telephoneState: false,
-                        error:"Telephone number not valid",
-                    })
-                }else {
-                    this.setState({
-                        error: "One or more field unfilled"
-                    })
-                }
-                this.setState({
-                    errorState:true
+                        errorState:false
+                    });
                 })
-            });
+                .catch((error) => {
+                    console.log(error.response.data);
+                    if(error.response.data === "TelephoneNumberNotValid"){
+                        this.setState({
+                            telephoneState: false,
+                            error:"Telephone number not valid",
+                        })
+                    }else {
+                        this.setState({
+                            error: "One or more field unfilled"
+                        })
+                    }
+                    this.setState({
+                        errorState:true
+                    })
+                });
+        }
+        else{
+            axios.post('http://localhost:8080/api/v1/addOwner', owner, config)
+                .then(res => {
+                    this.setState({
+                        errorState:false
+                    });
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                    if(error.response.data === "TelephoneNumberNotValid"){
+                        this.setState({
+                            telephoneState: false,
+                            error:"Telephone number not valid",
+                        })
+                    }else {
+                        this.setState({
+                            error: "One or more field unfilled"
+                        })
+                    }
+                    this.setState({
+                        errorState:true
+                    })
+                });
+        }
     };
 
     renderRedirect = () => {

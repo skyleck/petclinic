@@ -52,6 +52,7 @@ public class OwnerRestController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "api/v1/updateOwner", method = RequestMethod.PUT)
     public ResponseEntity<?>  updateOwner(HttpServletRequest request) {
         try {
