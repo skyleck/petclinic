@@ -22,6 +22,23 @@ export class OwnerFormular extends Component{
         errorState: true
     };
 
+    componentWillMount(){
+        this.init();
+    }
+
+    init = () =>{
+        if(this.props.location.state !== undefined) {
+            this.setState({
+                lastname: this.props.location.state.owner.lastname,
+                firstname: this.props.location.state.owner.firstname,
+                address: this.props.location.state.owner.address,
+                city: this.props.location.state.owner.city,
+                telephone: this.props.location.state.owner.telephone
+            });
+            console.log(this.props.location.state.owner.lastname);
+        }
+    };
+
     handleChange = event => {
         const target = event.target;
         const name = target.name;
@@ -88,11 +105,11 @@ export class OwnerFormular extends Component{
     };
 
     renderRedirect = () => {
-        console.log(this.state.errorState)
+        console.log(this.state.errorState);
         if(!this.state.errorState){
             return <Redirect to='/owners'/>
         }
-    }
+    };
 
     render(){
         return(
@@ -121,7 +138,7 @@ export class OwnerFormular extends Component{
                 </label>
                 <div className="textError">{this.state.error}</div>
                 {this.renderRedirect()}
-                <input type="submit" value="Add owner"/>
+                <input type="submit" value={this.props.location.state !== undefined ? "Update owner" : "Add owner"}/>
             </form>
             </div>
         )

@@ -10,6 +10,15 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
 
     const getMod = i % 2;
 
+    const owner = {
+        id: id,
+        lastname: lastname,
+        firstname: firstname,
+        address: address,
+        city: city,
+        telephone: telephone,
+    };
+
     return(
         <div className="ownerPet">
             <div className={"owner" + getMod}>
@@ -23,8 +32,8 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
                 </div>
                 <div className="buttonContainer">
                     <div className="buttonsOwner">
-                        <NavLink  exact to="/updateOwner">
-                            <div className="updateButton"></div>
+                        <NavLink exact to={{pathname: '/updateOwner/', state:{owner:owner}}}>
+                            <div className="updateButton"/>
                         </NavLink>
                         <div className="deleteButton">X</div>
                     </div>
@@ -36,7 +45,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
             </div>
         </div>
     )
-}
+};
 
 export default Owner
 
