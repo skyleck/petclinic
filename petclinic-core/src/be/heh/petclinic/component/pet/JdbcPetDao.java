@@ -17,7 +17,7 @@ class JdbcPetDao {
 
     public Collection<Pet> getPets(){
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("SELECT * FROM pet", new PetRowMapper());
+        return select.query("SELECT * FROM pet ORDER BY ownerId", new PetRowMapper());
     }
 
     public Collection<Pet> getPets(int ownerId){
@@ -35,5 +35,10 @@ class JdbcPetDao {
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.update("UPDATE pet SET name = ?, birthdate = ?, typepet = ? WHERE id = ?",
                 new Object[]{pet.getName(),pet.getBirthdate(),pet.getType().toString(),id});
+    }
+
+    public void deletePet(int id) {
+        JdbcTemplate template = new JdbcTemplate(dataSource);
+        template.update("DELETE FROM pet WHERE id = ?",id);
     }
 }

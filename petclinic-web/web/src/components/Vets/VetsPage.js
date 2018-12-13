@@ -33,8 +33,8 @@ export default class VetsPage extends Component{
 
     render(){
         return(
-            <div class="container">
-                <div class="vetsView">
+            <div className="container">
+                <div className="vetsView">
                     {this.state.vets}
                 </div>
             </div>

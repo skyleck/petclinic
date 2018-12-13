@@ -28,7 +28,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
                         </NavLink>
                         <div className="deleteButton">X</div>
                     </div>
-                    <div className="addButton">+</div>
+                    <a href={`/addPet/${id}`} className="addButton">+</a>
                 </div>
             </div>
             <div className="pets">

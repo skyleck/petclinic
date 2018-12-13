@@ -1,10 +1,12 @@
 package be.heh.petclinic.domain;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Pet {
+public class Pet extends AModelObject {
     private int id;
     private String name;
     private Calendar birthdate;
@@ -12,11 +14,11 @@ public class Pet {
     private int ownerId;
     //private ArrayList<Visit> visits;
 
-    public Pet(int id,String name, int year, int month, int day, TypePet type, int ownerId) {
+    public Pet(int id,String name, int year, int month, int day, TypePet type, int ownerId) throws NullValueException {
         this.id=id;
-        this.name = name;
+        this.setName(name);
         this.birthdate = new GregorianCalendar(year,month,day);
-        this.type = type;
+        this.type=type;
         this.ownerId = ownerId;
     }
 
@@ -34,8 +36,8 @@ public class Pet {
         return this.type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws NullValueException {
+        this.setStringField(Pet.class, "name", name);
     }
 
     public void setBirthdate(int year, int month, int day) {

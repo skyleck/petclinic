@@ -53,6 +53,17 @@ body{
   margin-bottom: 15px;
 }
 
+.pets .deleteButton{
+  transition: all 1s ease-in-out;
+  height: 0;
+  margin: 0;
+}
+
+.ownerPet:hover>.pets .deleteButton{
+  height: 50px;
+  margin: 2px;
+}
+
 .petsInfo{
   overflow: hidden;
   transition: all 1s ease-in-out;
@@ -61,6 +72,10 @@ body{
   margin-left: 10%;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.petDelete {
+  display: none;
 }
 
 .pets img{
@@ -237,6 +252,9 @@ input[type=submit]{
   text-align: center;
   line-height: 50px;
   color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .addButton{
@@ -248,7 +266,6 @@ input[type=submit]{
 }
 
 .deleteButton{
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #2e4b1b;
   line-height: 55px;
 }
