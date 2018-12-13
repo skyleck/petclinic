@@ -32,9 +32,7 @@ export class PetFormular extends Component{
         event.preventDefault();
 
         this.setState({
-            name: this.validInput(this.state.name),
-            type: this.validInput(this.state.type),
-            birthdate: this.validInput(this.state.birthdate),
+            nameState: this.validInput(this.state.name),
             error:''
         });
 
