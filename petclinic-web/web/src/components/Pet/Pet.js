@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pets = ({name,birthdate,type}) => {
 
-    let importImg = require('../../../public/Pets/'+type+'.png')
+    let importImg = require('../../../public/Pets/'+type+'.png');
 
     return(
         <div>
