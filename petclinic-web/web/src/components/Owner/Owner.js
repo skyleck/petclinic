@@ -6,7 +6,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
 
     const petsHTML = pets.map( pet =>
         <Pet key={pet.name}{...pet}/>
-    )
+    );
 
     const getMod = i % 2;
 

@@ -10,6 +10,7 @@ export class PetFormular extends Component{
         error:'',
 
         nameState: true,
+        typeState: true,
         errorState:true
     }
 
@@ -33,6 +34,7 @@ export class PetFormular extends Component{
 
         this.setState({
             nameState: this.validInput(this.state.name),
+            typeState: this.validInput(this.state.type),
             error:''
         });
 
@@ -80,7 +82,7 @@ export class PetFormular extends Component{
                     </label>
                     <label>
                         Type :
-                        <input name="type" type="text" onChange={this.handleChange} className="myInput"/>
+                        <input name="type" type="text" onChange={this.handleChange} className={this.state.typeState ? "myInput" : "error"}/>
                     </label>
                     <div className="textError">{this.state.error}</div>
                     <input type="submit" value="Add pet"/>

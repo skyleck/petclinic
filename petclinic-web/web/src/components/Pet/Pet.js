@@ -3,7 +3,7 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 
-const Pets = ({id,name,birthdate,type}) => {
+const Pets = ({id,name,birthdate,birthdateString,type}) => {
 
     let isDelete = false;
     
@@ -33,7 +33,7 @@ const Pets = ({id,name,birthdate,type}) => {
                 <img src={importImg} alt=""/>
                 <div>
                     <div><span>Name :</span> {name}</div>
-                    <div><span>Birthdate :</span> {birthdate}</div>
+                    <div><span>Birthdate :</span> {birthdateString}</div>
                     <div><span>Type :</span> {type}</div>
                 </div>
                 <div>
