@@ -1,22 +1,31 @@
 package be.heh.petclinic.domain;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Pet {
+public class Pet extends AModelObject {
     private int id;
     private String name;
     private Calendar birthdate;
+    private String birthdateString;
     private TypePet type;
     private int ownerId;
     //private ArrayList<Visit> visits;
 
-    public Pet(int id,String name, int year, int month, int day, TypePet type, int ownerId) {
+    public Pet(int id,String name, int year, int month, int day, TypePet type, int ownerId) throws NullValueException {
         this.id=id;
-        this.name = name;
-        this.birthdate = new GregorianCalendar(year,month,day);
-        this.type = type;
+        this.setName(name);
+        birthdate = Calendar.getInstance();
+        birthdate.set(year,month,day);
+        System.out.println("DATE+++ : "+year +"/"+month+"/"+day);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        this.birthdateString = simpleDateFormat.format(birthdate.getTime());
+        this.type=type;
         this.ownerId = ownerId;
     }
 
@@ -34,8 +43,8 @@ public class Pet {
         return this.type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws NullValueException {
+        this.setStringField(Pet.class, "name", name);
     }
 
     public void setBirthdate(int year, int month, int day) {
@@ -71,5 +80,9 @@ public class Pet {
     @Override
     public String toString() {
         return  birthdate.get(Calendar.YEAR) + " " + birthdate.get(Calendar.MONTH) + " " + birthdate.get(Calendar.DAY_OF_MONTH);
+    }
+
+    public String getBirthdateString() {
+        return birthdateString;
     }
 }

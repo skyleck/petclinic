@@ -1,8 +1,9 @@
 package be.heh.petclinic.component.pet;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
 import be.heh.petclinic.domain.Pet;
-
 import be.heh.petclinic.domain.TypePet;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -14,11 +15,11 @@ public class PetRowMapper implements RowMapper<Pet> {
 
     @Override
     public Pet mapRow(ResultSet rs, int i) throws SQLException {
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(rs.getDate("birthdate"));
-        System.out.println("TETSTA : " + calendar.get(Calendar.MONTH));
-        Pet pet = new Pet(
+        Pet pet = null;
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(rs.getDate("birthdate"));
+            pet = new Pet(
                 rs.getInt("id"),
                 rs.getString("name"),
                 calendar.get(Calendar.YEAR),
@@ -26,7 +27,10 @@ public class PetRowMapper implements RowMapper<Pet> {
                 calendar.get(Calendar.DATE),
                 Enum.valueOf(TypePet.class,rs.getString("typepet")),
                 rs.getInt("ownerId")
-        );
+            );
+        } catch (NullValueException e) {
+            e.printStackTrace();
+        }
         return pet;
     }
 }
