@@ -29,6 +29,7 @@ public class PetRestController {
         return new ResponseEntity<Collection<Pet>>(pets,HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "api/v1/addPet", method = RequestMethod.POST)
     public ResponseEntity<String> addPet(HttpServletRequest request) {
         try {
@@ -36,8 +37,10 @@ public class PetRestController {
             String type = request.getParameter("type");
             String[] tab = request.getParameter("birthdate").split("-");//TODO : Secure input
             String ownerId = request.getParameter("ownerId");
-            petComponentImpl.addPet(new Pet(-1, name, Integer.parseInt(tab[0]), Integer.parseInt(tab[1]),
+            System.out.println("BIRTHDATE : " + request.getParameter("birthdate"));
+            petComponentImpl.addPet(new Pet(-1, name, Integer.parseInt(tab[0]), Integer.parseInt(tab[1])-1,
                                             Integer.parseInt(tab[2]), Enum.valueOf(TypePet.class,type), Integer.parseInt(ownerId)));
+
             return new ResponseEntity<String>(HttpStatus.OK);
         } catch (NullValueException e) {
             return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);

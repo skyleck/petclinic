@@ -20,7 +20,6 @@ public class PetRowMapper implements RowMapper<Pet> {
         try {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(rs.getDate("birthdate"));
-            System.out.println("TETSTA : " + calendar.get(Calendar.MONTH));
             pet = new Pet(
                 rs.getInt("id"),
                 rs.getString("name"),

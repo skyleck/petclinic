@@ -12,7 +12,7 @@ export class PetFormular extends Component{
         nameState: true,
         typeState: true,
         errorState:true
-    }
+    };
 
     handleChange = event => {
         const target = event.target;
@@ -34,10 +34,10 @@ export class PetFormular extends Component{
 
         this.setState({
             nameState: this.validInput(this.state.name),
-            typeState: this.validInput(this.state.type),
             error:''
         });
 
+        console.log(this.state.type);
         const pet = querystring.stringify({
             name: this.state.name,
             type: this.state.type,
@@ -81,8 +81,16 @@ export class PetFormular extends Component{
                         <input name="birthdate" type="date" onChange={this.handleChange} className="myInput"/>
                     </label>
                     <label>
-                        Type :
-                        <input name="type" type="text" onChange={this.handleChange} className={this.state.typeState ? "myInput" : "error"}/>
+                        Type:
+                        <select name="type" value={this.state.type} onChange={this.handleChange} className="myInput">
+                            <option value="bird">Bird</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="lizard">Lizard</option>
+                            <option value="rabbit">Rabbit</option>
+                            <option value="snake">Snake</option>
+                        </select>
                     </label>
                     <div className="textError">{this.state.error}</div>
                     <input type="submit" value="Add pet"/>
