@@ -34,4 +34,9 @@ class PetComponentImpl implements PetComponent{
     public void updatePet(int id, Pet updatePet) {
         petDao.updatePet(id, updatePet);
     }
+
+    @Override
+    public void deletePet(int id) {
+        petDao.deletePet(id);
+    }
 }

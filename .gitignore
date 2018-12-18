@@ -2,6 +2,9 @@
 petclinic.iml
 .gradle/
 petclinic-web/build
+petclinic-web/bin
 .project
 .settings/
 .vscode/
+petclinic-core/build
+petclinic-core/bin

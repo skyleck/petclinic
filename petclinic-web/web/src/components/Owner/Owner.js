@@ -9,7 +9,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
 
     const petsHTML = pets.map( pet =>
         <Pet key={pet.name}{...pet}/>
-    )
+    );
 
     const getMod = i % 2;
 
@@ -42,7 +42,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
                         </NavLink>
                         <div className="deleteButton">X</div>
                     </div>
-                    <div className="addButton">+</div>
+                    <a href={`/addPet/${id}`} className="addButton">+</a>
                 </div>
             </div>
             <div className="pets">
