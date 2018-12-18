@@ -2,9 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
+<<<<<<< HEAD
 
 let importImg = require('../../../public/Pets/'+type+'.png');
 
+=======
+>>>>>>> f9ab7bf0c16bfdcd2e2c5caa78cd9b77363fa971
 const Pets = ({id,name,birthdate,birthdateString,type}) => {
 
     let isDelete = false;
