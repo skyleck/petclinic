@@ -5,7 +5,7 @@ import { Link,NavLink } from 'react-router-dom';
 const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
 
     let gear = 'gearWhite';
-    let importImg = require('../../../public/'+gear+'.png');
+    let importGear = require('../../../public/'+gear+'.png');
 
     const petsHTML = pets.map( pet =>
         <Pet key={pet.name}{...pet}/>
@@ -37,7 +37,7 @@ const Owner = ({id,lastname,firstname,address,city,telephone,pets,i}) => {
                     <div className="buttonsOwner">
                         <NavLink exact to={{pathname: '/updateOwner/', state:{owner:owner}}}>
                             <div className="updateButton">
-                                <img src={importImg} alt=""/>
+                                <img src={importGear} alt=""/>
                             </div>
                         </NavLink>
                         <div className="deleteButton">X</div>

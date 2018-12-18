@@ -14,6 +14,20 @@ export class PetFormular extends Component{
         errorState:true
     };
 
+    componentWillMount(){
+        this.init();
+    }
+
+    init = () =>{
+        if(this.props.location.state !== undefined) {
+            this.setState({
+                name: this.props.location.state.pet.name,
+                type: this.props.location.state.pet.type,
+                birthdate: this.props.location.state.pet.birthdate
+            });
+        }
+    };
+
     handleChange = event => {
         const target = event.target;
         const name = target.name;
@@ -52,7 +66,8 @@ export class PetFormular extends Component{
             }
         };
 
-        axios.post('http://localhost:8080/api/v1/addPet', pet, config)
+        if(this.props.location.state !== undefined) {
+            axios.put('http://localhost:8080/api/v1/updateOwner', pet, config)
             .then(res => {
                 this.setState({
                     errorState:false
@@ -66,6 +81,23 @@ export class PetFormular extends Component{
                     errorState: true
                 })
             }))
+        }
+        else {
+            axios.post('http://localhost:8080/api/v1/addPet', pet, config)
+            .then(res => {
+                this.setState({
+                    errorState:false
+                });
+            })
+            .catch((error => {
+                this.setState({
+                    error: "One or more field unfilled"
+                })
+                this.setState({
+                    errorState: true
+                })
+            }))
+        }
     };
     
     render(){
@@ -74,11 +106,11 @@ export class PetFormular extends Component{
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name :
-                        <input name="name" type="text" onChange={this.handleChange} className={this.state.nameState ? "myInput" : "error"}/>
+                        <input name="name" type="text" onChange={this.handleChange} className={this.state.nameState ? "myInput" : "error"} value={this.state.name}/>
                     </label>
                     <label>
                         birthdate :
-                        <input name="birthdate" type="date" onChange={this.handleChange} className="myInput"/>
+                        <input name="birthdate" type="date" onChange={this.handleChange} className="myInput" value={this.state.birthdate}/>
                     </label>
                     <label>
                         Type:
@@ -93,7 +125,7 @@ export class PetFormular extends Component{
                         </select>
                     </label>
                     <div className="textError">{this.state.error}</div>
-                    <input type="submit" value="Add pet"/>
+                    <input type="submit" value={this.props.location.state !== undefined ? "Update pet" : "Add pet"}/>
                 </form>
             </div>
         );
