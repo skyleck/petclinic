@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import querystring from 'querystring';
+import { Redirect } from 'react-router-dom'
 
 export class PetFormular extends Component{
     state = {
         name : '',
         type : '',
         birthdate : null,
+        birthdateString: '',
+        ownerId: -1,
         error:'',
 
         nameState: true,
@@ -23,8 +26,14 @@ export class PetFormular extends Component{
             this.setState({
                 name: this.props.location.state.pet.name,
                 type: this.props.location.state.pet.type,
-                birthdate: this.props.location.state.pet.birthdate
+                birthdate: this.props.location.state.pet.birthdate,
+                birthdateString: this.props.location.state.pet.birthdateString,
+                ownerId: this.props.location.state.pet.ownerId
             });
+        }else{
+            this.setState({
+                ownerId: this.props.match.params.id
+            })
         }
     };
 
@@ -51,14 +60,16 @@ export class PetFormular extends Component{
             error:''
         });
 
-        console.log(this.state.type);
         const pet = querystring.stringify({
+            id: this.props.location.state !== undefined ? this.props.location.state.pet.id : '-1',
             name: this.state.name,
             type: this.state.type,
             birthdate: this.state.birthdate,
-            ownerId: this.props.match.params.id
+            birthdateString: this.state.birthdateString,
+            ownerId: this.state.ownerId
         });
 
+        console.log(pet);
         const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -67,7 +78,7 @@ export class PetFormular extends Component{
         };
 
         if(this.props.location.state !== undefined) {
-            axios.put('http://localhost:8080/api/v1/updateOwner', pet, config)
+            axios.put('http://localhost:8080/api/v1/updatePet', pet, config)
             .then(res => {
                 this.setState({
                     errorState:false
@@ -99,6 +110,13 @@ export class PetFormular extends Component{
             }))
         }
     };
+
+    renderRedirect = () => {
+        console.log(this.state.errorState);
+        if(!this.state.errorState){
+            return <Redirect to='/owners'/>
+        }
+    };
     
     render(){
         return(
@@ -110,7 +128,7 @@ export class PetFormular extends Component{
                     </label>
                     <label>
                         birthdate :
-                        <input name="birthdate" type="date" onChange={this.handleChange} className="myInput" value={this.state.birthdate}/>
+                        <input name="birthdateString" type="date" onChange={this.handleChange} className="myInput" value={this.state.birthdateString}/>
                     </label>
                     <label>
                         Type:
@@ -125,6 +143,7 @@ export class PetFormular extends Component{
                         </select>
                     </label>
                     <div className="textError">{this.state.error}</div>
+                    {this.renderRedirect()}
                     <input type="submit" value={this.props.location.state !== undefined ? "Update pet" : "Add pet"}/>
                 </form>
             </div>

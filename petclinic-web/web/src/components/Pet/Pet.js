@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import { Link,NavLink } from 'react-router-dom';
+import Owner from '../Owner/Owner';
 
-const Pets = ({id,name,birthdate,birthdateString,type}) => {
+const Pets = ({id,name,birthdate,birthdateString,type,ownerId}) => {
 
     let isDelete = false;
     let gear = 'gearWhite';
@@ -13,7 +14,9 @@ const Pets = ({id,name,birthdate,birthdateString,type}) => {
         id: id,
         name: name,
         birthdate: birthdate,
-        type: type
+        birthdateString: birthdateString,
+        type: type,
+        ownerId: ownerId
     };
     
     const config = {
