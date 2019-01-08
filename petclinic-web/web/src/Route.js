@@ -19,6 +19,7 @@ export default () => (
                 <Route path="/addOwner" component={AddOwner}/>
                 <Route path="/updateOwner/" component={AddOwner} owner = {(props) => { return this.location.state}}/>
                 <Route path="/addPet/:id" component={AddPet}/>
+                <Route path="/updatePet/" component={AddPet} pet = {(props) => { return this.location.state}}/>
             </Switch>
         </div>
     </BrowserRouter>

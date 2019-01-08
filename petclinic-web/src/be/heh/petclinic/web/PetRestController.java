@@ -35,9 +35,8 @@ public class PetRestController {
         try {
             String name = request.getParameter("name");
             String type = request.getParameter("type");
-            String[] tab = request.getParameter("birthdate").split("-");//TODO : Secure input
+            String[] tab = request.getParameter("birthdateString").split("-");//TODO : Secure input
             String ownerId = request.getParameter("ownerId");
-            System.out.println("BIRTHDATE : " + request.getParameter("birthdate"));
             petComponentImpl.addPet(new Pet(-1, name, Integer.parseInt(tab[0]), Integer.parseInt(tab[1])-1,
                                             Integer.parseInt(tab[2]), Enum.valueOf(TypePet.class,type), Integer.parseInt(ownerId)));
 
@@ -47,9 +46,21 @@ public class PetRestController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "api/v1/updatePet", method = RequestMethod.PUT)
-    public ResponseEntity<String> updatePet(int id, Pet updatePet) {
-        petComponentImpl.updatePet(id, updatePet);
+    public ResponseEntity<String> updatePet(HttpServletRequest request) {
+        try {
+            int id = Integer.valueOf(request.getParameter("id"));
+            String name = request.getParameter("name");
+            String type = request.getParameter("type");
+            String[] tab = request.getParameter("birthdateString").split("-");//TODO : Secure input
+            String ownerId = request.getParameter("ownerId");
+            petComponentImpl.updatePet(id, new Pet(id, name, Integer.parseInt(tab[0]), Integer.parseInt(tab[1])-1,
+                                        Integer.parseInt(tab[2]), Enum.valueOf(TypePet.class,type), Integer.parseInt(ownerId)));
+        }
+        catch (NullValueException e) {
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return new ResponseEntity<String>(HttpStatus.OK);
     }
     

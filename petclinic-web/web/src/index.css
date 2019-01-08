@@ -54,13 +54,13 @@ body{
   margin-bottom: 15px;
 }
 
-.pets .deleteButton{
+.pets .deleteButton, .pets .updateButton{
   transition: all 1s ease-in-out;
   height: 0;
   margin: 0;
 }
 
-.ownerPet:hover>.pets .deleteButton{
+.ownerPet:hover>.pets .deleteButton, .ownerPet:hover>.pets .updateButton{
   height: 50px;
   margin: 2px;
 }
@@ -180,7 +180,7 @@ body{
   margin-bottom: 5px;
 }
 
-.ownerPet:hover .pets img {
+.ownerPet:hover .pets .imgPet {
   height: 60px;
 }
 
