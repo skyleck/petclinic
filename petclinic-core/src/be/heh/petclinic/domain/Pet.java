@@ -22,7 +22,6 @@ public class Pet extends AModelObject {
         this.setName(name);
         birthdate = Calendar.getInstance();
         birthdate.set(year,month,day);
-        System.out.println("DATE+++ : "+year +"/"+month+"/"+day);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         this.birthdateString = simpleDateFormat.format(birthdate.getTime());
         this.type=type;
@@ -70,7 +69,6 @@ public class Pet extends AModelObject {
     @Override
     public boolean equals(Object obj) {
         Calendar calendar = ((Pet)obj).getBirthdate();
-        System.out.println("PO : " + calendar.get(Calendar.YEAR) + " == " + this.getBirthdate().get(Calendar.YEAR));
         return (((Pet) obj).getId()==this.getId()
                 &&((Pet) obj).getName().equals(this.getName())
                 && ((Pet) obj).getBirthdate().get(Calendar.YEAR) == this.getBirthdate().get(Calendar.YEAR))

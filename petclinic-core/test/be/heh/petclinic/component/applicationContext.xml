@@ -7,7 +7,12 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="classpath*:be/heh/petclinic/config.xml"/>
+    <bean id="dataSource" name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://192.168.99.100:3306/petclinic_test" />
+        <property name="username" value="root" />
+        <property name="password" value="test" />
+    </bean>
     <import resource="classpath*:be/heh/**/component.xml"/>
 
 </beans>

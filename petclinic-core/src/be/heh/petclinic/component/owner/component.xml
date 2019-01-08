@@ -11,5 +11,6 @@
 
 
     <bean id="ownerComponent" class="be.heh.petclinic.component.owner.OwnerComponentImpl">
+        <constructor-arg name="dataSource" ref="dataSource" />
     </bean>
 </beans>

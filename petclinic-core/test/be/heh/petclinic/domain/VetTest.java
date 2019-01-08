@@ -1,5 +1,6 @@
 package be.heh.petclinic.domain;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ class VetTest {
     Vet vet;
 
     @BeforeEach
-    void initTest(){
+    void initTest() throws NullValueException {
         this.vet = new Vet("James","James","none");
     }
 
@@ -30,19 +31,19 @@ class VetTest {
     }
 
     @Test
-    void setLastname() {
+    void setLastname() throws NullValueException {
         this.vet.setLastname("Hempte");
         assertEquals("Hempte",vet.getLastname());
     }
 
     @Test
-    void setFirstname() {
+    void setFirstname() throws NullValueException {
         this.vet.setFirstname("Maxime");
         assertEquals("Maxime", vet.getFirstname());
     }
 
     @Test
-    void setSpeciality() {
+    void setSpeciality() throws NullValueException {
         this.vet.setSpeciality("test");
         assertEquals("test",vet.getSpeciality());
     }

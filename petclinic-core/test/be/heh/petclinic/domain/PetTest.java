@@ -1,8 +1,10 @@
 package be.heh.petclinic.domain;
 
+import be.heh.petclinic.domain.Exception.NullValueException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +14,7 @@ class PetTest {
     Pet pet;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws NullValueException {
         pet = new Pet(0,"Buzz",2018,10,25,TypePet.rabbit,5);
     }
 
@@ -28,7 +30,10 @@ class PetTest {
 
     @Test
     void getBirthdate() {
-        assertEquals(new GregorianCalendar(2018,10,25),pet.getBirthdate());
+        Calendar birthdate = new GregorianCalendar(2018,10,25);
+        assertEquals(birthdate.get(Calendar.YEAR),pet.getBirthdate().get(Calendar.YEAR));
+        assertEquals(birthdate.get(Calendar.MONTH),pet.getBirthdate().get(Calendar.MONTH));
+        assertEquals(birthdate.get(Calendar.DAY_OF_MONTH),pet.getBirthdate().get(Calendar.DAY_OF_MONTH));
     }
 
     @Test
@@ -42,7 +47,7 @@ class PetTest {
     }
 
     @Test
-    void setName() {
+    void setName() throws NullValueException {
         pet.setName("Roger");
         assertEquals("Roger",pet.getName());
     }

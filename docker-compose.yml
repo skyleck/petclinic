@@ -20,7 +20,7 @@ services:
       - db
       - app
     build:
-      context: ./petclinic-web
+      context: ./petclinic-web/web
     ports:
       - '3000:3000'
     environment:

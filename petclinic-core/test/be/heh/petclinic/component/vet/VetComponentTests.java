@@ -1,6 +1,7 @@
 package be.heh.petclinic.component.vet;
 
 import be.heh.petclinic.AbstractComponentTestBase;
+import be.heh.petclinic.domain.Exception.NullValueException;
 import be.heh.petclinic.domain.Vet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ public class VetComponentTests extends AbstractComponentTestBase {
     private Collection<Vet> list;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws NullValueException {
         list = new ArrayList<Vet>();
 
         list.add(new Vet("Carter", "James", "none"));
